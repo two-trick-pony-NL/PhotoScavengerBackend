@@ -4,7 +4,6 @@ import numpy as np
 import cv2
 import os
 from torch import classes
-from helperfunctions import ReadLabels
 
 
 def detector(raw_image, expected_outcome):
@@ -16,7 +15,7 @@ def detector(raw_image, expected_outcome):
     prototxt_path = 'models/MobileNetSSD_deploy.prototxt.txt'
     model_path = 'models/MobileNetSSD_deploy.caffemodel'
     min_confidence = 0.2
-    classes = ReadLabels() #reading from a helperfunction
+    classes = ["background", "earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
     np.random.seed(543210)
     colors = np.random.uniform(0, 255, size=(len(classes), 3))
 
