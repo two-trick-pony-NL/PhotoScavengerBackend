@@ -20,7 +20,7 @@ async def UploadImage(expectedobject, file: bytes = File(...)):
     uniqueid = str(uuid.uuid4())
     with open('image'+uniqueid+'.jpg','wb') as image:
         rawimage = 'image'+uniqueid+'.jpg'
-        os.chdir('tempimages')
+        os.chdir('static')
         image.write(file)
         image.close()
         os.chdir('..')

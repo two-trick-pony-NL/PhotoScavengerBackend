@@ -49,7 +49,7 @@ def detector(raw_image, expected_outcome):
     #uncomment if you want to show the image with the rectangles   
     #cv2.imshow("Detected Objects", image)
     filename = "scanned_"+filename
-    path = 'tempimages'
+    path = 'static/tempimages' #saving to temp images folder
     cv2.imwrite(os.path.join(path , filename), image)
 
     #calculating the outcome:
