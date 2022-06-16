@@ -1,8 +1,9 @@
 from datetime import datetime
 from fileinput import filename
+from unittest import result
 from fastapi import FastAPI, File, UploadFile
-from pymysql import Timestamp
 from ImageDetector import detector
+import uuid
 import os
 
 app = FastAPI()
@@ -16,14 +17,16 @@ async def root():
 #The function then runs the AI model to see if the picture contains the expected object
 @app.post("/uploadfile/{expectedobject}")
 async def UploadImage(expectedobject, file: bytes = File(...)):
-    timestamp = str(datetime.now())
-    with open('image'+timestamp+'.jpg','wb') as image:
-        rawimage = 'image'+timestamp+'.jpg'
+    uniqueid = str(uuid.uuid4())
+    with open('image'+uniqueid+'.jpg','wb') as image:
+        rawimage = 'image'+uniqueid+'.jpg'
         os.chdir('tempimages')
         image.write(file)
         image.close()
         os.chdir('..')
-        print(rawimage)
-        
-        print(detector(rawimage, expectedobject))
-    return {'got it', 'hello'}
+        results = detector(rawimage, expectedobject)
+        objectfound = results[1]
+        otherobjectsdetected = results[2]
+        filename = results[0]
+        os.remove('image'+uniqueid+'.jpg')
+    return {'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename}
