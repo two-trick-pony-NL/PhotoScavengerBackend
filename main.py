@@ -1,7 +1,7 @@
 from datetime import datetime
 from fileinput import filename
 from unittest import result
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, Request
 from ImageDetector import detector
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -14,9 +14,10 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+@app.get("/{id}")
+@app.post("/{id}")
+async def read_item(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request, "id": '1', 'Searchedfor:': None, 'Wasfound': None, 'OtherObjectsDetected': None, 'Processed_FileName': None})
 
 # This endpoint triggers for this API call: 127.0.0.1:8000/uploadfile/cat. 
 #Add a image to your call in the body, and set a expected object in the URL. 
@@ -35,4 +36,5 @@ async def UploadImage(expectedobject, file: bytes = File(...)):
         otherobjectsdetected = results[2]
         filename = results[0]
         os.remove('image'+uniqueid+'.jpg')
-    return {'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename}
+    return {'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage}
+    #return templates.TemplateResponse("index.html", {"request": None, "id": id, 'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage})

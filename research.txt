@@ -1,0 +1,2 @@
+on capturing video from browser: 
+- https://web.dev/media-capturing-images/
