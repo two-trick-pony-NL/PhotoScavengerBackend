@@ -1,6 +1,3 @@
-from datetime import datetime
-from fileinput import filename
-from unittest import result
 from fastapi import FastAPI, File, UploadFile, Request
 from ImageDetector import detector
 from fastapi.staticfiles import StaticFiles

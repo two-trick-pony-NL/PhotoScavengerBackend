@@ -1,9 +1,7 @@
 from turtle import forward, width
-from cv2 import destroyAllWindows, resize, waitKey
 import numpy as np 
 import cv2
 import os
-from torch import classes
 
 
 def detector(raw_image, expected_outcome):
