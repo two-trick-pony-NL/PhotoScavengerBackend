@@ -51,3 +51,4 @@ def detector(raw_image, expected_outcome):
     #calculating the outcome:
     ExpectedOutcomeDetected = expected_outcome in listofobjects
     return filename, ExpectedOutcomeDetected, listofobjects
+    
