@@ -11,10 +11,9 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
-@app.get("/{id}")
-@app.post("/{id}")
-async def read_item(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request, "id": '1', 'Searchedfor:': None, 'Wasfound': None, 'OtherObjectsDetected': None, 'Processed_FileName': None})
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
 
 # This endpoint triggers for this API call: 127.0.0.1:8000/uploadfile/cat. 
 #Add a image to your call in the body, and set a expected object in the URL. 
