@@ -5,10 +5,10 @@ This is the FastAPI backend that supports my ScanGame Apps. It can detect certai
 - This API serves my React Native apps for the game here: https://github.com/two-trick-pony-NL/ScanGameApps
 
 # What does it do:
-This backend takes a POST request for an image and an expected object on that image (e.g. "Cat") then the backend will return a JSON response that tells you if it found the objects in that image. 
+This backend can check images to see if a certain object is on the picture. For instance: you can check if there is a cat on a particular photo. The backend will then return a false or true for that object depending on whether it was found. It will also return a list objects it managed to find. This allows you validate in case of false negatives, to see what the model thought was on the picture. See an example below. 
 
 # How does it work: 
-you make a POST request with a image in the formdata (content type 'file'). The description is the image name. 
+you make a POST request with a image in the formdata (content type 'file'). 
 For instance this image: 
 
 ![Schermafbeelding 2022-06-18 om 11 26 33](https://user-images.githubusercontent.com/71013416/175918302-bd99786a-9d4f-49d7-a90c-9bbbff847035.png)
@@ -19,7 +19,12 @@ Call
 http://localhost:80/uploadfile/bicycle
 ```
 
-Response
+or 
+```
+http://localhost:80/uploadfile/person
+```
+
+Response (for bicycle)
 ```
 {
     "Searchedfor:": "bicycle",
