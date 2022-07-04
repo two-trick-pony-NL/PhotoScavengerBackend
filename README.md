@@ -4,6 +4,9 @@ This is the FastAPI backend that supports my ScanGame Apps. It can detect certai
 # Companion apps: 
 - This API serves my React Native apps for the game here: https://github.com/two-trick-pony-NL/ScanGameApps
 
+![IMG_2749](https://user-images.githubusercontent.com/71013416/177129166-3392465b-48cd-4d37-a28c-4201054d5c33.PNG)
+
+
 # What does it do:
 This backend can check images to see if a certain object is on the picture. For instance: you can check if there is a cat on a particular photo. The backend will then return a false or true for that object depending on whether it was found. It will also return a list objects it managed to find. This allows you validate in case of false negatives, to see what the model thought was on the picture. See an example below. 
 
