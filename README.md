@@ -21,6 +21,13 @@ For instance this image:
 and it returns an image with the detected objects:
 ![scanned_imagee0dee0c1-3512-4617-8a3d-4d19b80c85e7](https://user-images.githubusercontent.com/71013416/177133306-d0eab947-6013-4925-94ce-dccb3106af1a.jpg)
 
+# How to run: 
+
+Simply clone the repo and run: 
+ 
+```
+uvicorn main:app --host 0.0.0.0 --port 80 --reload
+```
 
 # Request / Response
 
