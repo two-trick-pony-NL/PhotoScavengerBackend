@@ -1,5 +1,5 @@
 from fastapi import FastAPI, File, UploadFile, Request
-#from ImageDetector import detector
+from ImageDetector import detector
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import uuid
@@ -27,8 +27,8 @@ async def UploadImage(expectedobject, file: bytes = File(...)):
         image.write(file)
         image.close()
         os.chdir('..')
-        #results = detector(rawimage, expectedobject)
-        results = "'scanned_imaged36f9ea0-b059-4217-838d-c2f1b9cc58e9.jpg', False, ['pottedplant', 'pottedplant']"
+        results = detector(rawimage, expectedobject)
+        #results = "'scanned_imaged36f9ea0-b059-4217-838d-c2f1b9cc58e9.jpg', False, ['pottedplant', 'pottedplant']"
         print(results)
         objectfound = results[1]
         otherobjectsdetected = results[2]
