@@ -4,7 +4,9 @@ This is the FastAPI backend that supports my ScanGame Apps. It can detect certai
 Here is a in-game screenshot: <br>
 <img src="https://user-images.githubusercontent.com/71013416/177129166-3392465b-48cd-4d37-a28c-4201054d5c33.PNG" width="300" height="600" />
 
-
+# Demo on Heroku: 
+URL: https://scangamebackend.herokuapp.com
+Endpoint for POST requests: http://scangamebackend.herokuapp.com/uploadfile/boat
 
 # What does it do:
 This backend can check images to see if a certain object is on the picture. For instance: you can check if there is a cat on a particular photo. The backend will then return a false or true for that object depending on whether it was found. It will also return a list objects it managed to find. This allows you validate in case of false negatives, to see what the model thought was on the picture. See an example below. 
@@ -29,7 +31,7 @@ gh repo clone two-trick-pony-NL/ScanGameBackend && cd ScanGameBackend
 uvicorn main:app --host 0.0.0.0 --port 80 --reload
 ```
 
-# Request / Response
+# Request / Response -- Local
 
 Call
 ```
