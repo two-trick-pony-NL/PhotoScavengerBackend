@@ -16,6 +16,11 @@ For instance this image:
 
 ![Schermafbeelding 2022-06-18 om 11 26 33](https://user-images.githubusercontent.com/71013416/175918302-bd99786a-9d4f-49d7-a90c-9bbbff847035.png)
 
+and it returns an image with the detected objects:
+![scanned_imagee0dee0c1-3512-4617-8a3d-4d19b80c85e7](https://user-images.githubusercontent.com/71013416/177133306-d0eab947-6013-4925-94ce-dccb3106af1a.jpg)
+
+
+# Request / Response
 
 Call
 ```
@@ -51,3 +56,4 @@ Supported objects
 ```
 ["background", "earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
 ```
+
