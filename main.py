@@ -13,7 +13,7 @@ templates = Jinja2Templates(directory="templates")
 #This is just a test enpoint, that should be removed later. But it allows me to verify the backend is running, if the image detector is down. 
 @app.get("/")
 def read_root():
-    return {"How to use:": "Send a POST request with an image as file/body to: http://scangamebackend.herokuapp.com/uploadfile/boat and replace boat for an object you think is in the image.}
+    return {"How to use:": "Send a POST request with an image as file/body to: http://scangamebackend.herokuapp.com/uploadfile/boat and replace boat for an object you think is in the image."}
 
 # This endpoint triggers for this API call: 127.0.0.1:8000/uploadfile/cat. 
 #Add a image to your call in the body, and set a expected object in the URL. 
