@@ -15,6 +15,13 @@ templates = Jinja2Templates(directory="templates")
 def read_root():
     return {"How to use:": "Send a POST request with an image as file/body to: http://scangamebackend.herokuapp.com/uploadfile/boat and replace boat for an object you think is in the image."}
 
+
+
+@app.get("/exampleresponse")
+def exampleresponse():
+    return {"Searchedfor:":"boat","Wasfound":false,"OtherObjectsDetected":["person","person","person","person","bicycle","motorbike","bicycle","motorbike","bicycle"],"Processed_FileName":"scanned_image1ac0bc13-a3e7-4ec8-a2b6-0ae7d0dc9d5a.jpg","file_url":"image1ac0bc13-a3e7-4ec8-a2b6-0ae7d0dc9d5a.jpg"}
+
+
 # This endpoint triggers for this API call: 127.0.0.1:8000/uploadfile/cat. 
 #Add a image to your call in the body, and set a expected object in the URL. 
 #The function then runs the AI model to see if the picture contains the expected object
