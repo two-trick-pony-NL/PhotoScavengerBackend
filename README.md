@@ -22,7 +22,7 @@ and it returns an image with the detected objects:
 
 Simply clone the repo and run: 
 ```
-gh repo clone two-trick-pony-NL/ScanGameBackend
+gh repo clone two-trick-pony-NL/ScanGameBackend && cd ScanGameBackend
 ```
  
 ```
