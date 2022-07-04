@@ -19,7 +19,7 @@ def read_root():
 
 @app.get("/exampleresponse")
 def exampleresponse():
-    return {"Searchedfor:":"boat","Wasfound":false,"OtherObjectsDetected":["person","person","person","person","bicycle","motorbike","bicycle","motorbike","bicycle"],"Processed_FileName":"scanned_image1ac0bc13-a3e7-4ec8-a2b6-0ae7d0dc9d5a.jpg","file_url":"image1ac0bc13-a3e7-4ec8-a2b6-0ae7d0dc9d5a.jpg"}
+    return {"Searchedfor:":"boat","Wasfound":"false","OtherObjectsDetected":["person","person","person","person","bicycle","motorbike","bicycle","motorbike","bicycle"],"Processed_FileName":"scanned_image1ac0bc13-a3e7-4ec8-a2b6-0ae7d0dc9d5a.jpg","file_url":"image1ac0bc13-a3e7-4ec8-a2b6-0ae7d0dc9d5a.jpg"}
 
 
 # This endpoint triggers for this API call: 127.0.0.1:8000/uploadfile/cat. 
