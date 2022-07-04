@@ -5,8 +5,12 @@ Here is a in-game screenshot: <br>
 <img src="https://user-images.githubusercontent.com/71013416/177129166-3392465b-48cd-4d37-a28c-4201054d5c33.PNG" width="300" height="600" />
 
 # Demo on Heroku: 
-URL: https://scangamebackend.herokuapp.com
-Endpoint for POST requests: http://scangamebackend.herokuapp.com/uploadfile/boat
+- URL: https://scangamebackend.herokuapp.com
+- Endpoint for POST requests: http://scangamebackend.herokuapp.com/uploadfile/boat
+*Replace boat with any of these objects to detect them: 
+```
+background", "earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor
+```
 
 # What does it do:
 This backend can check images to see if a certain object is on the picture. For instance: you can check if there is a cat on a particular photo. The backend will then return a false or true for that object depending on whether it was found. It will also return a list objects it managed to find. This allows you validate in case of false negatives, to see what the model thought was on the picture. See an example below. 
