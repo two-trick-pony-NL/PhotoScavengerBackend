@@ -21,6 +21,9 @@ and it returns an image with the detected objects:
 # How to run: 
 
 Simply clone the repo and run: 
+```
+gh repo clone two-trick-pony-NL/ScanGameBackend
+```
  
 ```
 uvicorn main:app --host 0.0.0.0 --port 80 --reload
