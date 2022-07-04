@@ -6,6 +6,7 @@ Here is a in-game screenshot: <br>
 
 # Demo on Heroku: 
 - URL: https://scangamebackend.herokuapp.com
+- Example (returns JSON without receiving a picture: https://scangamebackend.herokuapp.com/exampleresponse
 - Endpoint for POST requests: http://scangamebackend.herokuapp.com/uploadfile/boat
 *Replace boat with any of these objects to detect them: 
 ```
