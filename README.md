@@ -69,3 +69,6 @@ Supported objects
 # Postman example: 
 ![Schermafbeelding 2022-07-04 om 12 14 33](https://user-images.githubusercontent.com/71013416/177134451-899276f5-a8e2-4127-b358-2c4ae46e4cee.png)
 
+
+# Acknowledgement: 
+- I took most of the Image detection from the tutorial by NeuralNine: https://www.youtube.com/watch?v=lE9eZ-FGwoE&t=2s 
