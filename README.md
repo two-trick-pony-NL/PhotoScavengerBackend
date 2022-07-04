@@ -21,6 +21,9 @@ and it returns an image with the detected objects:
 # How to run: 
 
 Simply clone the repo and run: 
+```
+gh repo clone two-trick-pony-NL/ScanGameBackend && cd ScanGameBackend
+```
  
 ```
 uvicorn main:app --host 0.0.0.0 --port 80 --reload
@@ -66,3 +69,6 @@ Supported objects
 # Postman example: 
 ![Schermafbeelding 2022-07-04 om 12 14 33](https://user-images.githubusercontent.com/71013416/177134451-899276f5-a8e2-4127-b358-2c4ae46e4cee.png)
 
+
+# Acknowledgement: 
+- I took most of the Image detection from the tutorial by NeuralNine: https://www.youtube.com/watch?v=lE9eZ-FGwoE&t=2s 
