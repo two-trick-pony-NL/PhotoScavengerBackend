@@ -1,8 +1,5 @@
 # ScanGameBackend
-This is the FastAPI backend that supports my ScanGame Apps. It can detect certain objects 
-
-# Companion apps: 
-This API serves my React Native apps for the game here: https://github.com/two-trick-pony-NL/ScanGameApps
+This is the FastAPI backend that supports my ScanGame Apps. It can detect certain objects from pictures. This API serves my iOS/Android apps for the game here: https://github.com/two-trick-pony-NL/ScanGameApps
 
 Here is a in-game screenshot: <br>
 <img src="https://user-images.githubusercontent.com/71013416/177129166-3392465b-48cd-4d37-a28c-4201054d5c33.PNG" width="300" height="600" />
@@ -65,4 +62,7 @@ Supported objects
 ```
 ["background", "earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
 ```
+
+# Postman example: 
+![Schermafbeelding 2022-07-04 om 12 14 33](https://user-images.githubusercontent.com/71013416/177134451-899276f5-a8e2-4127-b358-2c4ae46e4cee.png)
 
