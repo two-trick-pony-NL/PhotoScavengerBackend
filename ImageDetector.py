@@ -1,3 +1,4 @@
+from tkinter.messagebox import YES
 import numpy as np 
 import cv2
 import os
@@ -52,7 +53,11 @@ def detector(raw_image, expected_outcome):
     #path = 'static/tempimages' #saving to temp images folder
     #cv2.imwrite(os.path.join(path , filename), image)
 
-    #calculating the outcome:
-    ExpectedOutcomeDetected = expected_outcome in listofobjects
-    return filename, ExpectedOutcomeDetected, listofobjects, listofobjectsWithConfidence
+    #calculating the outcome, was the correct object in the photo
+    if expected_outcome in listofobjects:
+        ExpectedOutcomeDetected1 = 'YES'
+    else:
+        ExpectedOutcomeDetected1 = 'NO'
+    
+    return filename, ExpectedOutcomeDetected1, listofobjects, listofobjectsWithConfidence
     
