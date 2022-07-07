@@ -1,12 +1,17 @@
 # ScanGameBackend
 This is the FastAPI backend that supports my ScanGame Apps. It can detect certain objects from pictures. This API serves my iOS/Android apps for the game here: https://github.com/two-trick-pony-NL/ScanGameApps
 
+API documentation here:  
+- https://scangamebackend.herokuapp.com/docs
+
 Here is a in-game screenshot: <br>
 <img src="https://user-images.githubusercontent.com/71013416/177129166-3392465b-48cd-4d37-a28c-4201054d5c33.PNG" width="300" height="600" />
 
 # Demo on Heroku: 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/521a10c88390c265b54d?action=collection%2Fimport)
 - URL: https://scangamebackend.herokuapp.com
+- New assignment a random object to scan and it's emoji: https://scangamebackend.herokuapp.com/newassignment
+
 - Example (returns JSON without receiving a picture: https://scangamebackend.herokuapp.com/exampleresponse
 - Endpoint for POST requests: http://scangamebackend.herokuapp.com/uploadfile/boat
 *Replace boat with any of these objects to detect them: 
@@ -52,8 +57,8 @@ http://localhost:80/uploadfile/person
 Response (for bicycle)
 ```
 {
-    "Searchedfor:": "bicycle",
-    "Wasfound": true,
+    "Searchedfor:": "boat",
+    "Wasfound": false,
     "OtherObjectsDetected": [
         "person",
         "person",
@@ -65,8 +70,37 @@ Response (for bicycle)
         "motorbike",
         "bicycle"
     ],
-    "Processed_FileName": "scanned_imagec463b876-f050-43f6-b6a8-9c0235f5691d.jpg",
-    "file_url": "imagec463b876-f050-43f6-b6a8-9c0235f5691d.jpg"
+    "Processed_FileName": "scanned_image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg",
+    "file_url": "image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg",
+    "listofobjectsWithConfidence": [
+        {
+            "person": 100
+        },
+        {
+            "person": 100
+        },
+        {
+            "person": 100
+        },
+        {
+            "person": 100
+        },
+        {
+            "bicycle": 97
+        },
+        {
+            "motorbike": 91
+        },
+        {
+            "bicycle": 75
+        },
+        {
+            "motorbike": 48
+        },
+        {
+            "bicycle": 28
+        }
+    ]
 }
 ```
 Supported objects
@@ -74,6 +108,15 @@ Supported objects
 ["background", "earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
 ```
 
+Getting a new assignment
+```
+http://localhost:8000/newassignment
+```
+
+response:
+```
+{"dog":"🐕"}
+```
 # Postman example: 
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/521a10c88390c265b54d?action=collection%2Fimport)
