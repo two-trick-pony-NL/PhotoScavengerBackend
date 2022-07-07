@@ -27,17 +27,20 @@ def detector(raw_image, expected_outcome):
     
     #Drawing rectangles around the objects we detected
     listofobjects = []
+    listofobjectsWithConfidence = []
     for i in range(detected_objects.shape[2]):
         confidence = detected_objects[0][0][i][2] #This is a nested list that takes different values try print([0][0][0]) to see the raw value
         if confidence > min_confidence:
             class_index = int(detected_objects[0][0][i][1])
-            listofobjects.append(classes[class_index])
+            
             upper_left_x = int(detected_objects[0][0][i][3] * width)
             upper_left_y = int(detected_objects[0][0][i][4] * height)
             lower_right_x = int(detected_objects[0][0][i][5] * width)
             lower_right_y = int(detected_objects[0][0][i][6] * height)
-            confidence1 = round(confidence*100)
-            prediction_text = f"{classes[class_index]}: {confidence1}%"
+            confidenceRounded = round(confidence*100)
+            listofobjects.append(classes[class_index])
+            listofobjectsWithConfidence.append({classes[class_index]: confidenceRounded})
+            prediction_text = f"{classes[class_index]}: {confidenceRounded}%"
             cv2.rectangle(image, (upper_left_x, upper_left_y), (lower_right_x, lower_right_y), colors[class_index],3)
             cv2.putText(image, prediction_text, (upper_left_x, 
                         upper_left_y -15 if upper_left_y > 30 else upper_left_y +15), cv2.FONT_HERSHEY_SIMPLEX, 0.6, colors[class_index],2)
@@ -51,5 +54,5 @@ def detector(raw_image, expected_outcome):
 
     #calculating the outcome:
     ExpectedOutcomeDetected = expected_outcome in listofobjects
-    return filename, ExpectedOutcomeDetected, listofobjects
+    return filename, ExpectedOutcomeDetected, listofobjects, listofobjectsWithConfidence
     

@@ -21,7 +21,7 @@ def read_root():
 
 @app.get("/exampleresponse")
 def exampleresponse():
-    return {"Searchedfor":"boat","Wasfound":"false","OtherObjectsDetected":["person","person","person","person","bicycle","motorbike","bicycle","motorbike","bicycle"],"Processed_FileName":"scanned_image1ac0bc13-a3e7-4ec8-a2b6-0ae7d0dc9d5a.jpg","file_url":"image1ac0bc13-a3e7-4ec8-a2b6-0ae7d0dc9d5a.jpg"}
+    return {"Searchedfor:":"boat","Wasfound":false,"OtherObjectsDetected":["person","person","person","person","bicycle","motorbike","bicycle","motorbike","bicycle"],"Processed_FileName":"scanned_image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg","file_url":"image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg","listofobjectsWithConfidence":[{"person":100},{"person":100},{"person":100},{"person":100},{"bicycle":97},{"motorbike":91},{"bicycle":75},{"motorbike":48},{"bicycle":28}]}
 
 
 # This endpoint triggers for this API call: 127.0.0.1:8000/uploadfile/cat. 
@@ -41,10 +41,11 @@ async def UploadImage(expectedobject, file: bytes = File(...)):
         print(results)
         objectfound = results[1]
         otherobjectsdetected = results[2]
+        listofobjectsWithConfidence = results[3]
         filename = results[0]
         os.remove('image'+uniqueid+'.jpg')
 
-    return {'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage}
+    return {'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage, 'listofobjectsWithConfidence': listofobjectsWithConfidence}
     #return templates.TemplateResponse("index.html", {"request": None, "id": id, 'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage})
 
 @app.get("/newassignment")
