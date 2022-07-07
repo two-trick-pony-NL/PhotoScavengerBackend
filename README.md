@@ -7,6 +7,8 @@ Here is a in-game screenshot: <br>
 # Demo on Heroku: 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/521a10c88390c265b54d?action=collection%2Fimport)
 - URL: https://scangamebackend.herokuapp.com
+- New assignment a random object to scan and it's emoji: https://scangamebackend.herokuapp.com/newassignment
+
 - Example (returns JSON without receiving a picture: https://scangamebackend.herokuapp.com/exampleresponse
 - Endpoint for POST requests: http://scangamebackend.herokuapp.com/uploadfile/boat
 *Replace boat with any of these objects to detect them: 
@@ -74,6 +76,15 @@ Supported objects
 ["background", "earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
 ```
 
+Getting a new assignment
+```
+http://localhost:8000/newassignment
+```
+
+response:
+```
+{"dog":"🐕"}
+```
 # Postman example: 
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/521a10c88390c265b54d?action=collection%2Fimport)
