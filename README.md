@@ -57,8 +57,8 @@ http://localhost:80/uploadfile/person
 Response (for bicycle)
 ```
 {
-    "Searchedfor:": "bicycle",
-    "Wasfound": true,
+    "Searchedfor:": "boat",
+    "Wasfound": false,
     "OtherObjectsDetected": [
         "person",
         "person",
@@ -70,8 +70,37 @@ Response (for bicycle)
         "motorbike",
         "bicycle"
     ],
-    "Processed_FileName": "scanned_imagec463b876-f050-43f6-b6a8-9c0235f5691d.jpg",
-    "file_url": "imagec463b876-f050-43f6-b6a8-9c0235f5691d.jpg"
+    "Processed_FileName": "scanned_image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg",
+    "file_url": "image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg",
+    "listofobjectsWithConfidence": [
+        {
+            "person": 100
+        },
+        {
+            "person": 100
+        },
+        {
+            "person": 100
+        },
+        {
+            "person": 100
+        },
+        {
+            "bicycle": 97
+        },
+        {
+            "motorbike": 91
+        },
+        {
+            "bicycle": 75
+        },
+        {
+            "motorbike": 48
+        },
+        {
+            "bicycle": 28
+        }
+    ]
 }
 ```
 Supported objects
