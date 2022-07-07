@@ -1,6 +1,9 @@
 # ScanGameBackend
 This is the FastAPI backend that supports my ScanGame Apps. It can detect certain objects from pictures. This API serves my iOS/Android apps for the game here: https://github.com/two-trick-pony-NL/ScanGameApps
 
+API documentation here:  
+- https://scangamebackend.herokuapp.com/docs
+
 Here is a in-game screenshot: <br>
 <img src="https://user-images.githubusercontent.com/71013416/177129166-3392465b-48cd-4d37-a28c-4201054d5c33.PNG" width="300" height="600" />
 
