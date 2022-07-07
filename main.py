@@ -1,3 +1,5 @@
+from random import random, choice, randint
+from click import option
 from fastapi import FastAPI, File, UploadFile, Request
 from ImageDetector import detector
 from fastapi.staticfiles import StaticFiles
@@ -43,3 +45,13 @@ async def UploadImage(expectedobject, file: bytes = File(...)):
         os.remove('image'+uniqueid+'.jpg')
     return {'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage}
     #return templates.TemplateResponse("index.html", {"request": None, "id": id, 'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage})
+
+@app.get("/newassignment")
+def new_assignment():
+    keysandemojis = {"background":"❓", "earoplane": "✈️", "bicycle":"🚲", "bird": "🦅", "boat":"🚤", "bottle":"🍾", "bus": "🚌", "car":"🚗", "cat": "🐈", "chair": "🪑", "cow":"🐄", "diningtable": "❓", "dog": "🐕", "horse": "🐎", "motorbike": "🏍", "person": "👱‍♂️", "pottedplant":"🪴", "sheep":"🐑", "sofa": "🛋", "train": "🚂", "tvmonitor": "📺"}
+    options = ["background", "earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
+    NumberOfItems = len(options)-1
+    randomnumber = randint(0,NumberOfItems)
+    assignment = options[randomnumber]
+    emoji = keysandemojis[assignment]
+    return {assignment: emoji}
