@@ -4,10 +4,13 @@ from fastapi import FastAPI, File, UploadFile, Request
 from ImageDetector import detector
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from apilytics.fastapi import ApilyticsMiddleware
 import uuid
 import os
 
 app = FastAPI()
+app.add_middleware(ApilyticsMiddleware, api_key=os.getenv("be8b748a-e415-4f1f-9ead-de05f33801b2"))
+
 #Setting up static folder and templates in case we want to host a landing page in the future
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
