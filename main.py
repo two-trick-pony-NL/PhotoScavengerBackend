@@ -51,9 +51,9 @@ async def UploadImage(expectedobject, file: bytes = File(...)):
 @app.get("/newassignment")
 def new_assignment():
     keysandemojis = {"background":"❓", "earoplane": "✈️", "bicycle":"🚲", "bird": "🦅", "boat":"🚤", "bottle":"🍾", "bus": "🚌", "car":"🚗", "cat": "🐈", "chair": "🪑", "cow":"🐄", "diningtable": "❓", "dog": "🐕", "horse": "🐎", "motorbike": "🏍", "person": "👱‍♂️", "pottedplant":"🪴", "sheep":"🐑", "sofa": "🛋", "train": "🚂", "tvmonitor": "📺"}
-    #options = ["earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
+    options = ["earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
     #Shortened the list for easier photographing during testing
-    options = ["bottle", "cat", "chair", "diningtable", "person", "pottedplant", "sofa", "tvmonitor"]
+    #options = ["bottle", "cat", "chair", "diningtable", "person", "pottedplant", "sofa", "tvmonitor"]
     NumberOfItems = len(options)-1
     randomnumber = randint(0,NumberOfItems)
     assignment = options[randomnumber]
