@@ -2,18 +2,18 @@
 This is the FastAPI backend that supports my ScanGame Apps. It can detect certain objects from pictures. This API serves my iOS/Android apps for the game here: https://github.com/two-trick-pony-NL/ScanGameApps
 
 API documentation here:  
-- https://scangamebackend.herokuapp.com/docs
+- https://scangame.herokuapp.com/docs
 
 Here is a in-game screenshot: <br>
 <img src="https://user-images.githubusercontent.com/71013416/177129166-3392465b-48cd-4d37-a28c-4201054d5c33.PNG" width="300" height="600" />
 
 # Demo on Heroku: 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/521a10c88390c265b54d?action=collection%2Fimport)
-- URL: https://scangamebackend.herokuapp.com
-- New assignment a random object to scan and it's emoji: https://scangamebackend.herokuapp.com/newassignment
+- URL: https://scangame.herokuapp.com
+- New assignment a random object to scan and it's emoji: https://scangame.herokuapp.com/newassignment
 
-- Example (returns JSON without receiving a picture: https://scangamebackend.herokuapp.com/exampleresponse
-- Endpoint for POST requests: http://scangamebackend.herokuapp.com/uploadfile/boat
+- Example (returns JSON without receiving a picture: https://scangame.herokuapp.com/exampleresponse
+- Endpoint for POST requests: http://scangame.herokuapp.com/uploadfile/boat
 *Replace boat with any of these objects to detect them: 
 ```
 background", "earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor
