@@ -5,7 +5,7 @@ API documentation here:
 - https://scangame.herokuapp.com/docs
 
 Here is a in-game screenshot: <br>
-<img src="https://user-images.githubusercontent.com/71013416/177129166-3392465b-48cd-4d37-a28c-4201054d5c33.PNG" width="300" height="600" />
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/71013416/178448499-3f547173-43ab-41b2-967a-a1f9ae8dd9a0.gif)
 
 # Demo on Heroku: 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/521a10c88390c265b54d?action=collection%2Fimport)
