@@ -51,14 +51,22 @@ async def UploadImage(expectedobject, file: bytes = File(...)):
     return {'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage, 'listofobjectsWithConfidence': listofobjectsWithConfidence}
     #return templates.TemplateResponse("index.html", {"request": None, "id": id, 'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage})
 
-@app.get("/newassignment")
-def new_assignment():
+@app.get("/newassignment/{score}")
+def new_assignment(score: int):
+    #Taking the score to determine the difficulty of objects
+    if score < 2000: 
+        options = ["chair", "diningtable", "sofa", "tvmonitor"]
+    elif score < 4000:
+        options = [ "bicycle", "bottle",  "car", "chair",  "diningtable",  "person", "pottedplant", "sofa", "train", "tvmonitor"]
+    elif score < 6000:
+        options = ["bicycle", "bird", "bottle", "bus", "car", "cat", "chair", "diningtable", "dog", "motorbike", "person", "pottedplant", "sofa", "tvmonitor"]
+    else:
+        options = ["earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
+
     keysandemojis = {"background":"❓", "earoplane": "✈️", "bicycle":"🚲", "bird": "🦅", "boat":"🚤", "bottle":"🍾", "bus": "🚌", "car":"🚗", "cat": "🐈", "chair": "🪑", "cow":"🐄", "diningtable": "❓", "dog": "🐕", "horse": "🐎", "motorbike": "🏍", "person": "👱‍♂️", "pottedplant":"🪴", "sheep":"🐑", "sofa": "🛋", "train": "🚂", "tvmonitor": "📺"}
-    options = ["earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
-    #Shortened the list for easier photographing during testing
-    #options = ["bottle", "cat", "chair", "diningtable", "person", "pottedplant", "sofa", "tvmonitor"]
     NumberOfItems = len(options)-1
     randomnumber = randint(0,NumberOfItems)
     assignment = options[randomnumber]
     emoji = keysandemojis[assignment]
+    print(score)
     return {assignment: emoji}
