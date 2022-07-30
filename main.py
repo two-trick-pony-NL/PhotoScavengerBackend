@@ -54,11 +54,11 @@ async def UploadImage(expectedobject, file: bytes = File(...)):
 @app.get("/newassignment/{score}")
 def new_assignment(score: int):
     #Taking the score to determine the difficulty of objects
-    if score < 2000: 
-        options = ["chair", "diningtable", "sofa", "tvmonitor"]
+    if score < 500: 
+        options = ["chair", "bottle", "sofa", "tvmonitor"]
+    elif score < 2000:
+        options = [ "bicycle",  "car",  "diningtable",  "person", "pottedplant", "sofa", "train"]
     elif score < 4000:
-        options = [ "bicycle", "bottle",  "car", "chair",  "diningtable",  "person", "pottedplant", "sofa", "train", "tvmonitor"]
-    elif score < 6000:
         options = ["bicycle", "bird", "bottle", "bus", "car", "cat", "chair", "diningtable", "dog", "motorbike", "person", "pottedplant", "sofa", "tvmonitor"]
     else:
         options = ["earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
