@@ -59,7 +59,7 @@ def new_assignment(score: int):
     elif score < 2000:
         options = [ "bicycle",  "car",  "diningtable",  "person", "pottedplant", "sofa", "train"]
     elif score < 4000:
-        options = ["bicycle", "bird", "bottle", "bus", "car", "cat", "chair", "diningtable", "dog", "motorbike", "person", "pottedplant", "sofa", "tvmonitor"]
+        options =  ["bird", "bottle", "bus", "car", "cat", "chair", "dog", "motorbike", "person", "tvmonitor"]
     else:
         options = ["earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
 
