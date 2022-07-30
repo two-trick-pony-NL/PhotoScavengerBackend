@@ -1,5 +1,5 @@
 # ScanGameBackend
-This is the FastAPI backend that supports my ScanGame Apps. It can detect certain objects from pictures. This API serves my iOS/Android apps for the game here: https://github.com/two-trick-pony-NL/ScanGameApps
+This is the FastAPI backend that supports my ScanGame Apps. It can detect certain objects from pictures. This API serves my iOS/Android apps for the game here: https://github.com/two-trick-pony-NL/PhotoScavenger
 
 API documentation here:  
 - https://scangame.herokuapp.com/docs
@@ -10,7 +10,8 @@ Here is a in-game screenshot: <br>
 # Demo on Heroku: 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/521a10c88390c265b54d?action=collection%2Fimport)
 - URL: https://scangame.herokuapp.com
-- New assignment a random object to scan and it's emoji: https://scangame.herokuapp.com/newassignment
+- New assignment a random object to scan and it's emoji: https://scangame.herokuapp.com/newassignment/2001
+* In the new assignment call you need to add a number of points, more points means a more difficult next object
 
 - Example (returns JSON without receiving a picture: https://scangame.herokuapp.com/exampleresponse
 - Endpoint for POST requests: http://scangame.herokuapp.com/uploadfile/boat
