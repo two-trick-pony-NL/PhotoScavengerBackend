@@ -6,6 +6,8 @@ opencv-python-headless
 uvicorn==0.18.1
 gunicorn==20.1.0
 pandas>=1.1.4
+python-multipart
+
 
 #For YOLOV5 this whl is much smaller +- 80MB versus the 700 MB full torch package
 --find-links https://download.pytorch.org/whl/torch_stable.html
