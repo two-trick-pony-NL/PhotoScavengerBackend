@@ -4,14 +4,6 @@ numpy==1.23.0
 opencv-python-headless
 uvicorn==0.18.1
 gunicorn==20.1.0
-jinja2
-python-multipart
-apilytics
-
 #For YOLOV5
-
 torch>=1.7.0
-torchvision>=0.8.1
-
-# Plotting ------------------------------------
 pandas>=1.1.4
