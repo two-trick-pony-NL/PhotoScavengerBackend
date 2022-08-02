@@ -1,7 +1,10 @@
 from click import option
 from fastapi import FastAPI, File, UploadFile, Request
+from ImageDetectorV1 import detectorV1
 from ImageDetectorV2 import detectorV2
+from newassignmentV1 import new_assignmentV1
 from newassignmentV2 import new_assignmentV2
+
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
