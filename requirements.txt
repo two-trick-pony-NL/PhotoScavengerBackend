@@ -10,8 +10,7 @@ pyyaml
 numpy
 
 -f https://download.pytorch.org/whl/torch_stable.html
-
-torch==1.9.0+cpu
+torch==1.8.1+cpu 
 torchvision==0.2.2
 
 jinja2
