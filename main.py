@@ -6,17 +6,12 @@ from newassignmentV1 import new_assignmentV1
 from newassignmentV2 import new_assignmentV2
 
 from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 
 import uuid
 import os
 
 app = FastAPI()
-
-#Setting up static folder and templates in case we want to host a landing page in the future
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
 
 #This is just a test enpoint, that should be removed later. But it allows me to verify the backend is running, if the image detector is down. 
 @app.get("/", response_class=HTMLResponse)
