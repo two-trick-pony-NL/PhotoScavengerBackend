@@ -1,0 +1,37 @@
+motorcycle
+bus
+truck
+traffic light
+fire hydrant
+stop sign
+parking meter
+bench
+bird
+cat
+dog
+horse
+sheep
+cow
+suitcase
+frisbee
+skis
+snowboard
+sports ball
+kite
+baseball bat
+baseball glove
+skateboard
+surfboard
+tennis racket
+orange
+broccoli
+carrot
+hot dog
+pizza
+donut
+cake
+microwave
+oven
+toaster
+teddy bear
+hair drier

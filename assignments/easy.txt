@@ -1,0 +1,32 @@
+person
+backpack
+umbrella
+handbag
+tie
+bottle
+wine glass
+cup
+fork
+knife
+spoon
+bowl
+banana
+apple
+sandwich
+chair
+couch
+bed
+dining table
+toilet
+tv
+laptop
+mouse
+remote
+keyboard
+cell phone
+sink
+refrigerator
+book
+clock
+vase
+scissors

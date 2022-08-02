@@ -1,0 +1,41 @@
+bicycle
+car
+bench
+cat
+dog
+backpack
+umbrella
+handbag
+tie
+suitcase
+frisbee
+skis
+snowboard
+sports ball
+kite
+baseball bat
+baseball glove
+skateboard
+surfboard
+tennis racket
+broccoli
+carrot
+hot dog
+pizza
+donut
+cake
+potted plant
+laptop
+mouse
+remote
+keyboard
+cell phone
+microwave
+oven
+toaster
+sink
+refrigerator
+book
+teddy bear
+hair drier
+toothbrush

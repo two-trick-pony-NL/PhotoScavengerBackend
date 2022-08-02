@@ -1,0 +1,10 @@
+airplane
+train
+truck
+boat
+fire hydrant
+parking meter
+elephant
+bear
+zebra
+giraffe
