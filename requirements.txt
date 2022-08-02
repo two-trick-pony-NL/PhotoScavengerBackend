@@ -4,7 +4,10 @@ uvicorn==0.18.1
 gunicorn==20.1.0
 #For YOLOV5 this whl is much smaller +- 80MB versus the 700 MB full torch package
 pandas>=1.1.4
-https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp37-cp37m-linux_x86_64.whl
+
+--find-links https://download.pytorch.org/whl/torch_stable.html
+
+torch==1.2.0+cpu
 torchvision==0.2.2
 
 
