@@ -15,7 +15,7 @@ URL = "http://localhost:8000/v2/newassignment/"
 numberoftries = 3000
 
 for i in range (numberoftries):
-    j = random.randint(0, 12000)
+    j = random.randint(0, 10000)
     j = str(j)
     r = requests.get(url = URL+j)
     data = r.json()

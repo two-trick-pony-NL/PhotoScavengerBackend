@@ -6,7 +6,7 @@ import pandas
 min_confidence = float(0.3)
 
 # Model
-model = torch.hub.load('ultralytics/yolov5', 'yolov5x')  # or yolov5n - yolov5x6, custom
+model = torch.hub.load('ultralytics/yolov5', 'yolov5m')  # or yolov5n - yolov5x6, custom
 
 
 
