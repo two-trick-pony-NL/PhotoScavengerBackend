@@ -2,6 +2,6 @@ alembic==1.7.7
 fastapi==0.78.0
 uvicorn==0.18.1
 gunicorn==20.1.0
-#For YOLOV5
-http://download.pytorch.org/whl/cpu/torch-0.4.1-cp36-cp36m-linux_x86_64.whl
+#For YOLOV5 this whl is much smaller +- 80MB versus the 700 MB full torch package
+torch==1.9.0+cpu
 pandas>=1.1.4
