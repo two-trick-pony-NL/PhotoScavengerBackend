@@ -1,24 +1,21 @@
 alembic==1.7.7
 fastapi==0.78.0
+numpy==1.23.0
+opencv-python-headless
 uvicorn==0.18.1
 gunicorn==20.1.0
-opencv-python-headless
-requests
-#For YOLOV5 this whl is much smaller +- 80MB versus the 700 MB full torch package
-pandas>=1.1.4
-
-
---find-links https://download.pytorch.org/whl/torch_stable.html
-torch==1.11.0+cpu
-
 jinja2
 python-multipart
 apilytics
+pandas>=1.1.4
+
+#For YOLOV5 this whl is much smaller +- 80MB versus the 700 MB full torch package
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==1.11.0+cpu
 
 # Base for YoloV5----------------------------------------
 matplotlib>=3.2.2
 numpy>=1.18.5
-opencv-python>=4.1.1
 Pillow>=7.1.2
 PyYAML>=5.3.1
 requests>=2.23.0
