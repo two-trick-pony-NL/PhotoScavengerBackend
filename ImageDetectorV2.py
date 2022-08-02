@@ -1,5 +1,5 @@
 
-"""
+
 import torch
 import pandas
 
@@ -7,14 +7,13 @@ min_confidence = float(0.3)
 
 # Model
 model = torch.hub.load('ultralytics/yolov5', 'yolov5x')  # or yolov5n - yolov5x6, custom
-"""
 
 
 
 
 def detectorV2(raw_image, expected_outcome):
     print("Detector disabled because of issue with torch")
-    """
+    
 
     # Images
     filename = str(raw_image)
@@ -54,4 +53,3 @@ def detectorV2(raw_image, expected_outcome):
 
 
     return filename, ExpectedOutcomeDetected1, listofobjects
-"""
