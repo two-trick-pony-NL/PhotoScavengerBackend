@@ -1,6 +1,6 @@
 alembic==1.7.7
 fastapi==0.78.0
-numpy==1.23.1
+numpy==1.21.6
 #Special version of CV2 that runs headless like my app
 opencv-python-headless
 uvicorn==0.18.1
