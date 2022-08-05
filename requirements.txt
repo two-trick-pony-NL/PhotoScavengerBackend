@@ -22,6 +22,6 @@ requests>=2.23.0
 scipy>=1.4.1
 torchvision== 0.12.0
 tqdm>=4.64.0
-ipython==8.4.0
+ipython==7.34.0
 psutil==5.9.1
 protobuf<=3.20.1  # https://github.com/ultralytics/yolov5/issues/8012
