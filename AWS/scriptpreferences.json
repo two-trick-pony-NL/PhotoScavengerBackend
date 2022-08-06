@@ -1,0 +1,5 @@
+{
+    "serviceName": "photoscavenger",
+    "containerName": "photoscavenger",
+    "filterPattern": "-ELB-HealthChecker -static"
+}
