@@ -8,47 +8,47 @@ env:
   AWS_REGION: eu-central-1
   AWS_LIGHTSAIL_SERVICE_NAME: photoscavenger
 jobs:
+          
+  buildingimage:
+    name: Building container image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Utilities
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq unzip
+      - name: Install AWS Client
+        run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install || true
+          aws --version
+          curl "https://s3.us-west-2.amazonaws.com/lightsailctl/latest/linux-amd64/lightsailctl" -o "lightsailctl"
+          sudo mv "lightsailctl" "/usr/local/bin/lightsailctl"
+          sudo chmod +x /usr/local/bin/lightsailctl
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         
-buildingimage:
-  name: Building container image
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Install Utilities
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y jq unzip
-    - name: Install AWS Client
-      run: |
-        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-        unzip awscliv2.zip
-        sudo ./aws/install || true
-        aws --version
-        curl "https://s3.us-west-2.amazonaws.com/lightsailctl/latest/linux-amd64/lightsailctl" -o "lightsailctl"
-        sudo mv "lightsailctl" "/usr/local/bin/lightsailctl"
-        sudo chmod +x /usr/local/bin/lightsailctl
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-region: ${{ env.AWS_REGION }}
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      
-    - name: Build Docker Image
-      run: docker build -t photoscavenger:latest .
-    - name: Push image to container register
-      run: |
-        service_name=${{ env.AWS_LIGHTSAIL_SERVICE_NAME }}
-        aws lightsail push-container-image \
-          --region ${{ env.AWS_REGION }} \
-          --service-name ${service_name} \
-          --label ${service_name} \
-          --image ${service_name}:latest
+      - name: Build Docker Image
+        run: docker build -t photoscavenger:latest .
+      - name: Push image to container register
+        run: |
+          service_name=${{ env.AWS_LIGHTSAIL_SERVICE_NAME }}
+          aws lightsail push-container-image \
+            --region ${{ env.AWS_REGION }} \
+            --service-name ${service_name} \
+            --label ${service_name} \
+            --image ${service_name}:latest
 
-    - name: Deploying app to production
-      run: |
-        aws lightsail create-container-service-deployment --service-name photoscavenger \
-          --containers file://AWS/deploymentconfig.json \
-          --public-endpoint file://AWS/publicendpoint.json
+      - name: Deploying app to production
+        run: |
+          aws lightsail create-container-service-deployment --service-name photoscavenger \
+            --containers file://AWS/deploymentconfig.json \
+            --public-endpoint file://AWS/publicendpoint.json
 
