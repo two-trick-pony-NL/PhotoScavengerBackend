@@ -1,14 +1,9 @@
 name: 🚀 Production deployment
 # Only trigger, when the build workflow succeeded
 on:
-  release:
-    types:
-      - created
-  workflow_run:
-    workflows: ["CICDPipeline"]
-    types:
-      - completed
-
+  push:
+    branches: [ "master" ]
+    
 env:
   AWS_REGION: eu-central-1
   AWS_LIGHTSAIL_SERVICE_NAME: photoscavenger
