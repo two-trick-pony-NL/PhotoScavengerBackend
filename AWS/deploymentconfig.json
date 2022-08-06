@@ -1,0 +1,3 @@
+{"photoscavenger": {
+  "image": ":photoscavenger.photoscavenger.latest",
+  "ports": {"80": "HTTP"}}}

@@ -1,0 +1,12 @@
+{
+  "containerName": "photoscavenger",
+  "containerPort": 80,
+  "healthCheck": {
+    "healthyThreshold": 2,
+    "unhealthyThreshold": 2,
+    "timeoutSeconds": 2,
+    "intervalSeconds": 300,
+    "path": "/",
+    "successCodes": "200-299"
+}
+}
