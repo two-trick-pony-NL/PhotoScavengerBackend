@@ -1,7 +1,0 @@
-# Adding some dependancies for Herok±u
-libsm6
-libxrender1
-libfontconfig1
-python-opencv
-libice6
-libgl1-mesa-glx
