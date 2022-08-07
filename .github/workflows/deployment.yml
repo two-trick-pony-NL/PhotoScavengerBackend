@@ -51,5 +51,5 @@ jobs:
           aws lightsail create-container-service-deployment --service-name photoscavenger \
             --containers file://AWS/deploymentconfig.json \
             --public-endpoint file://AWS/publicendpoint.json
-      - name: @@@@@@@@@@@@@ All done. Cleaning up ♻️  @@@@@@@@@@@@@
+      - name: =========== All done. Cleaning up ♻️  ===========
         run: ls
