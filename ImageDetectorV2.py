@@ -37,7 +37,7 @@ def detectorV2(raw_image, expected_outcome):
 
 
     print("\n\n########################### \n\n")
-    print("List of Objects -- Confidence > " +min_confidence)
+    print("List of Objects")
 
 
     listofobjects = Detection['name'].tolist()
