@@ -20,7 +20,6 @@ COPY ImageDetector.py .
 COPY ImageDetectorV1.py .
 COPY ImageDetectorV2.py .
 COPY main.py .
-COPY yolov5m.pt .
 COPY newassignmentV1.py .
 COPY newassignmentV2.py .
 COPY assignments ./assignments
