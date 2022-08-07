@@ -35,7 +35,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: 🤖 Downloading Machine Learning Model (Yolov5X)
-        run: wget https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5x.pt
+        run: wget https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5m.pt
         
       - name: 🐳 Create a Docker Container
         run: docker build -t photoscavenger:latest .
