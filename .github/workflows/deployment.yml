@@ -13,9 +13,9 @@ jobs:
     name: 🚀 Launching new version...
     runs-on: ubuntu-latest
     steps:
-      - name: 🗂 Getting all the code Peter has written
+      - name: 🗂  Getting all the code Peter has written
         uses: actions/checkout@v2
-      - name: ⚙️ Updating to the latest versions
+      - name: ⚙️  Updating to the latest versions
         run: |
           sudo apt-get update
           sudo apt-get install -y jq unzip
@@ -51,4 +51,5 @@ jobs:
           aws lightsail create-container-service-deployment --service-name photoscavenger \
             --containers file://AWS/deploymentconfig.json \
             --public-endpoint file://AWS/publicendpoint.json
-
+      - name: @@@@@@@@@@@@@ All done. Cleaning up ♻️  @@@@@@@@@@@@@
+        run: ls
