@@ -2,7 +2,7 @@
 FROM python:3.10-buster
 
 # By default, listen on port 5000
-EXPOSE 5000/tcp
+EXPOSE 80/tcp
 
 # Set the working directory in the container
 WORKDIR /photoscavenger
