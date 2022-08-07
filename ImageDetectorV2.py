@@ -3,7 +3,7 @@
 import torch
 import pandas
 
-min_confidence = float(0.3)
+min_confidence = float(0.2)
 
 # Model
 model = torch.hub.load('ultralytics/yolov5', 'yolov5x')  # or yolov5n - yolov5x6, custom
@@ -12,9 +12,7 @@ model = torch.hub.load('ultralytics/yolov5', 'yolov5x')  # or yolov5n - yolov5x6
 
 
 def detectorV2(raw_image, expected_outcome):
-    print("Detector disabled because of issue with torch")
-    
-
+    print("Detecting with V2 detector")
     # Images
     filename = str(raw_image)
     img = filename  # or file, Path, PIL, OpenCV, numpy, list
@@ -39,7 +37,7 @@ def detectorV2(raw_image, expected_outcome):
 
 
     print("\n\n########################### \n\n")
-    print("List of Objects -- Low confidence removed")
+    print("List of Objects -- Confidence > " +min_confidence)
 
 
     listofobjects = Detection['name'].tolist()
