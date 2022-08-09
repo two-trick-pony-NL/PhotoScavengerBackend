@@ -1,24 +1,11 @@
-# ScanGameBackend
-This is the FastAPI backend that supports my ScanGame Apps. It can detect certain objects from pictures. This API serves my iOS/Android apps for the game here: https://photoscavenger.petervandoorn.com
-
-API documentation here:  
-- https://scangame.herokuapp.com/docs
+# Photoscavenger App
+This is the FastAPI backend that supports my PhotoScavenger Apps. It can detect certain objects from pictures. This API serves my iOS/Android apps for the game here: https://photoscavenger.petervandoorn.com
 
 Here is a in-game screenshot: <br>
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/71013416/178448499-3f547173-43ab-41b2-967a-a1f9ae8dd9a0.gif)
 
-# Demo on Heroku: 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/521a10c88390c265b54d?action=collection%2Fimport)
-- URL: https://scangame.herokuapp.com
-- New assignment a random object to scan and it's emoji: https://scangame.herokuapp.com/newassignment/2001
-* In the new assignment call you need to add a number of points, more points means a more difficult next object
-
-- Example (returns JSON without receiving a picture: https://scangame.herokuapp.com/exampleresponse
-- Endpoint for POST requests: http://scangame.herokuapp.com/uploadfile/boat
-*Replace boat with any of these objects to detect them: 
-```
-background", "earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor
-```
+- API  [documentation](https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/docs).
+- App on [appstore](https://apps.apple.com/nl/app/photo-scavenger/id1637234234?l=en)
 
 # What does it do:
 This backend can check images to see if a certain object is on the picture. For instance: you can check if there is a cat on a particular photo. The backend will then return a false or true for that object depending on whether it was found. It will also return a list objects it managed to find. This allows you validate in case of false negatives, to see what the model thought was on the picture. See an example below. 
@@ -43,11 +30,19 @@ gh repo clone two-trick-pony-NL/ScanGameBackend && cd ScanGameBackend
 uvicorn main:app --host 0.0.0.0 --port 80 --reload
 ```
 
+# V1 vs V2 
+The V1 API has 18 objects to be detected and V2 can detect 80 different objects 
+Their endpoinsta are: 
+- V1: https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/uploadfile/person
+- V2: https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/v2/uploadfile/person 
+
+
+
 # Request / Response -- Local
 
 Call
 ```
-http://localhost:80/uploadfile/bicycle
+http://localhost:80/v2/uploadfile/bicycle
 ```
 
 or 
@@ -58,72 +53,129 @@ http://localhost:80/uploadfile/person
 Response (for bicycle)
 ```
 {
-    "Searchedfor:": "boat",
-    "Wasfound": false,
+    "Searchedfor:": "person",
+    "Wasfound": "YES",
     "OtherObjectsDetected": [
         "person",
         "person",
         "person",
         "person",
-        "bicycle",
-        "motorbike",
-        "bicycle",
-        "motorbike",
-        "bicycle"
+        "chair",
+        "person",
+        "chair",
+        "boat",
+        "bird",
+        "person",
+        "person"
     ],
-    "Processed_FileName": "scanned_image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg",
-    "file_url": "image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg",
-    "listofobjectsWithConfidence": [
-        {
-            "person": 100
-        },
-        {
-            "person": 100
-        },
-        {
-            "person": 100
-        },
-        {
-            "person": 100
-        },
-        {
-            "bicycle": 97
-        },
-        {
-            "motorbike": 91
-        },
-        {
-            "bicycle": 75
-        },
-        {
-            "motorbike": 48
-        },
-        {
-            "bicycle": 28
-        }
-    ]
+    "Processed_FileName": "imagecfb104fe-8347-4ef5-b733-2a0d3d8e6b88.jpg"
 }
 ```
-Supported objects
+Supported objects in V1
 ```
 ["background", "earoplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
 ```
 
-Getting a new assignment
+Supported objects in V2 
 ```
-http://localhost:8000/newassignment
+person
+bicycle
+car
+motorcycle
+airplane
+bus
+train
+truck
+boat
+traffic light
+fire hydrant
+stop sign
+parking meter
+bench
+bird
+cat
+dog
+horse
+sheep
+cow
+elephant
+bear
+zebra
+giraffe
+backpack
+umbrella
+handbag
+tie
+suitcase
+frisbee
+skis
+snowboard
+sports ball
+kite
+baseball bat
+baseball glove
+skateboard
+surfboard
+tennis racket
+bottle
+wine glass
+cup
+fork
+knife
+spoon
+bowl
+banana
+apple
+sandwich
+orange
+broccoli
+carrot
+hot dog
+pizza
+donut
+cake
+chair
+couch
+potted plant
+bed
+dining table
+toilet
+tv
+laptop
+mouse
+remote
+keyboard
+cell phone
+microwave
+oven
+toaster
+sink
+refrigerator
+book
+clock
+vase
+scissors
+teddy bear
+hair drier
+toothbrush
+```
+
+# Getting a new assignment
+Note: Corrospond the right assignment API with the correct image detector API. As the V1 version will only know the 18 classes that AI model has. Also, the integer at the end of the call is the score the player currently has. The higher the score the more difficult the object is to find. 
+
+### V1
+```
+http://localhost:8000/newassignment/2000
+```
+
+### V2
+```
+http://localhost:8000/v2/newassignment/2000
 ```
 
 response:
 ```
 {"dog":"🐕"}
 ```
-# Postman example: 
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/521a10c88390c265b54d?action=collection%2Fimport)
-
-![Schermafbeelding 2022-07-04 om 12 14 33](https://user-images.githubusercontent.com/71013416/177134451-899276f5-a8e2-4127-b358-2c4ae46e4cee.png)
 
 
-# Acknowledgement: 
-- I took most of the Image detection from the tutorial by NeuralNine: https://www.youtube.com/watch?v=lE9eZ-FGwoE&t=2s 
