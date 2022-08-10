@@ -1,5 +1,5 @@
 # Set base image (host OS)
-FROM python:3.11-rc-slim-bullseye
+FROM python:3.10-buster
 
 # By default, listen on port 5000
 EXPOSE 80/tcp
@@ -18,6 +18,7 @@ COPY calculateassignment.py .
 COPY gunicorn.sh .
 COPY ImageDetector.py .
 COPY ImageDetectorV1.py .
+COPY yolov5m.pt .
 COPY ImageDetectorV2.py .
 COPY main.py .
 COPY newassignmentV1.py .
