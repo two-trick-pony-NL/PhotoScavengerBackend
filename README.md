@@ -188,3 +188,10 @@ response:
 ```
 
 
+
+# Monitoring deployment
+Here is my command to keep track of deployment
+
+```
+gh run watch && watch -n 5 aws lightsail get-container-log --service-name photoscavenger --container-name photoscavenger --filter-pattern deployment
+```
