@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/71013416/183674037-eca7cc9b-4a19-494c-a449-af638fdd869c.png)
+![image](https://user-images.githubusercontent.com/71013416/183674037-eca7cc9b-4a19-494c-a449-af638fdd869c.png =250x250)
 
 
 # Photoscavenger App
