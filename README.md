@@ -1,6 +1,6 @@
 
 
-<img src="https://github.com/favicon.ico](https://user-images.githubusercontent.com/71013416/183674037-eca7cc9b-4a19-494c-a449-af638fdd869c.png" width="250">
+<img src="https://user-images.githubusercontent.com/71013416/183674037-eca7cc9b-4a19-494c-a449-af638fdd869c.png" width="250">
 
 
 
