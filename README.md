@@ -2,9 +2,9 @@
 
 <img src="https://user-images.githubusercontent.com/71013416/183674037-eca7cc9b-4a19-494c-a449-af638fdd869c.png" width="250">
 
+<a> href="https://apps.apple.com/nl/app/photo-scavenger/id1637234234?l=en"<img src="[https://user-images.githubusercontent.com/71013416/183674037-eca7cc9b-4a19-494c-a449-af638fdd869c.png](https://user-images.githubusercontent.com/71013416/183876659-380ec479-f8b1-473d-83e4-6becaa8583cd.png)" width="100"></a>
 
 
-![Download_on_the_App_Store_Badge svg](https://user-images.githubusercontent.com/71013416/183876659-380ec479-f8b1-473d-83e4-6becaa8583cd.png)(https://apps.apple.com/nl/app/photo-scavenger/id1637234234?l=en)
 
 
 # Photoscavenger App
