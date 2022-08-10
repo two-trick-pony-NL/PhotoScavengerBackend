@@ -3,8 +3,8 @@
   "containerPort": 80,
   "healthCheck": {
     "healthyThreshold": 2,
-    "unhealthyThreshold": 2,
-    "timeoutSeconds": 2,
+    "unhealthyThreshold": 5,
+    "timeoutSeconds": 15,
     "intervalSeconds": 300,
     "path": "/",
     "successCodes": "200-299"
