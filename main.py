@@ -28,8 +28,10 @@ def read_root(request: Request):
     f = open('stats.json')
     data = json.load(f)
     length_of_data = len(data)
-    values = data.values()
-    keys = data.keys()
+    keys = list(data.values())
+    values = list(data.keys())
+    print(keys)
+    print(values)
     return templates.TemplateResponse("index.html" , {"request": request, "data": data, "keys":keys, "values":values, "length":length_of_data})
 
 
