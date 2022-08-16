@@ -13,6 +13,21 @@
                 <li>3. replace boat for an object you think is in the image.</li>
                 </ul>
                 <hr>
+                <h2>Check what calls are being made</h2>
+                <table style="padding: 15px; text-align: center;border: 1px solid;">
+                    <tr>
+                      <th>Endpoint</th>
+                      <th>Number of calls</th>
+                    </tr>
+                    {% for key, value in data.items() %}
+                    <tr>
+                      <td>{{key}}</td>
+                      <td>{{value}}</td>
+    
+                    </tr>
+                    {% endfor %}
+                  </table>
+                <hr>
                 <h2>How to get an example response</h2>
                 <p>Send a call to http://scangame.herokuapp.com/exampleresponse
                 <hr>

@@ -24,37 +24,13 @@ update = Stats.update_stats
 
 @app.get("/", response_class=HTMLResponse)
 @update(name="API Docs Homepage") 
-def read_root():
-    return"""
-    <html>
-        <head>
-            <title>PhotoScavenger API </title>
-        </head>
-        <body>
-        <img src="https://user-images.githubusercontent.com/71013416/179624009-d72ba019-3639-438d-8857-dbc061f675a3.png" width="200" height="200" alt="PhotoScavengerLogo">
-            <h1> Welcome to the photoscavenger API <h1>
-            <hr>
-            <h2>See how this API is used on the dashboard</h2>
-            <form action="/dashboard">
-                <input type="submit" value="Go to Dashboard" />
-            </form>
-            <hr>
-            <h2>How to detect objects using PhotoScavenger API</h2>
-                <ul>
-                <li>1. Prepare a POST request with an image as file/body </li>
-                <li>2. Send that request to to: https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com//uploadfile/boat or  https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com//v2/uploadfile/boat</li>
-                <li>3. replace boat for an object you think is in the image.</li>
-                </ul>
-                <hr>
-                <h2>How to get an example response</h2>
-                <p>Send a call to https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com//exampleresponse
-                <hr>
-                <h2> Where to find the documentation? </h2>
-                <p>check: https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com//docs for documentation</p>
-                <p>Or check github : https://github.com/two-trick-pony-NL/PhotoScavengerBackend</p>
-        </body>
-    </html> 
-    """
+def read_root(request: Request):
+    f = open('stats.json')
+    data = json.load(f)
+    length_of_data = len(data)
+    print(data)
+    print(length_of_data)
+    return templates.TemplateResponse("index.html" , {"request": request, "data": data, "length":length_of_data})
 
 
 @app.get("/exampleresponse")
@@ -127,6 +103,7 @@ def get_stats():
 
 
 @app.get("/dashboard", response_class=HTMLResponse)
+@update(name="Dashboard visit")
 def get_stats(request: Request):
     f = open('stats.json')
     data = json.load(f)
@@ -135,3 +112,7 @@ def get_stats(request: Request):
     print(length_of_data)
     return templates.TemplateResponse("dashboard.html" , {"request": request, "data": data, "length":length_of_data})
 
+@app.get("/healthcheck")
+@update(name="Healtcheck by AWS")
+def healthcheck():
+    return "Server is up"
