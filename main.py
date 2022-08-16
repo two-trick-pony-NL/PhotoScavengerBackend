@@ -100,7 +100,7 @@ def get_stats():
     f = open('stats.json')
     data = json.load(f)
     return data
-    
+
 
 @app.get("/healthcheck")
 @update(name="Healtcheck by AWS")
