@@ -1,0 +1,24 @@
+<html>
+        <head>
+            <title>PhotoScavenger API </title>
+        </head>
+        <body>
+        <img src="https://user-images.githubusercontent.com/71013416/179624009-d72ba019-3639-438d-8857-dbc061f675a3.png" width="200" height="200" alt="PhotoScavengerLogo">
+            <h1> Dashboard for the Photo Scavenger API <h1>
+            <hr>
+            <h2>How the API is used:</h2>
+            <table>
+                <tr>
+                  <th>Endpoint</th>
+                  <th>Number of hits</th>
+                </tr>
+                {% for key, value in data.items() %}
+                <tr>
+                  <td>{{key}}</td>
+                  <td>{{value}}</td>
+
+                </tr>
+                {% endfor %}
+              </table>
+        </body>
+    </html> 

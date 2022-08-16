@@ -7,10 +7,12 @@ from newassignmentV1 import new_assignmentV1
 from newassignmentV2 import new_assignmentV2
 from fastapistats import Stats
 import json
+from fastapi.templating import Jinja2Templates
 
 
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
+templates = Jinja2Templates(directory="templates")
 
 import uuid
 import os
@@ -32,18 +34,23 @@ def read_root():
         <img src="https://user-images.githubusercontent.com/71013416/179624009-d72ba019-3639-438d-8857-dbc061f675a3.png" width="200" height="200" alt="PhotoScavengerLogo">
             <h1> Welcome to the photoscavenger API <h1>
             <hr>
+            <h2>See how this API is used on the dashboard</h2>
+            <form action="/dashboard">
+                <input type="submit" value="Go to Dashboard" />
+            </form>
+            <hr>
             <h2>How to detect objects using PhotoScavenger API</h2>
                 <ul>
                 <li>1. Prepare a POST request with an image as file/body </li>
-                <li>2. Send that request to to: http://scangame.herokuapp.com/uploadfile/boat or  http://scangame.herokuapp.com/v2/uploadfile/boat</li>
+                <li>2. Send that request to to: https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com//uploadfile/boat or  https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com//v2/uploadfile/boat</li>
                 <li>3. replace boat for an object you think is in the image.</li>
                 </ul>
                 <hr>
                 <h2>How to get an example response</h2>
-                <p>Send a call to http://scangame.herokuapp.com/exampleresponse
+                <p>Send a call to https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com//exampleresponse
                 <hr>
                 <h2> Where to find the documentation? </h2>
-                <p>check: https://scangamebackend.herokuapp.com/docs for documentation</p>
+                <p>check: https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com//docs for documentation</p>
                 <p>Or check github : https://github.com/two-trick-pony-NL/PhotoScavengerBackend</p>
         </body>
     </html> 
@@ -118,4 +125,13 @@ def get_stats():
     data = json.load(f)
     return data
 
+
+@app.get("/dashboard", response_class=HTMLResponse)
+def get_stats(request: Request):
+    f = open('stats.json')
+    data = json.load(f)
+    length_of_data = len(data)
+    print(data)
+    print(length_of_data)
+    return templates.TemplateResponse("dashboard.html" , {"request": request, "data": data, "length":length_of_data})
 
