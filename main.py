@@ -33,9 +33,6 @@ def read_root(request: Request):
     keylist = []
     for key in keys:
         keylist.append(str(key.replace('&',"")))
-    print(keys)
-    print(values)
-    print(keylist)
     return templates.TemplateResponse('index.html' , {'request': request, 'data': data, 'keys':keys, "keylist":keylist, 'values':values, 'length':length_of_data})
 
 
@@ -69,8 +66,8 @@ async def UploadImage(expectedobject, file: bytes = File(...)):
     return {'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage, 'listofobjectsWithConfidence': listofobjectsWithConfidence}
     #return templates.TemplateResponse('index.html', {'request': None, 'id': id, 'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage})
 
-@app.post('/v2/uploadfile/{expectedobject}')
-@update(name='uploadfileV2') # if the name kwarg is not passed it will default to the function name
+@app.post("/v2/uploadfile/{expectedobject}")
+@update(name='uploadfileV2')
 async def UploadImage(expectedobject, file: bytes = File(...)):
     #Receiving the image the image
     uniqueid = str(uuid.uuid4())
