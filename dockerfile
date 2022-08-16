@@ -29,5 +29,6 @@ COPY models ./models
 COPY static ./static
 COPY Tests ./tests
 COPY stats.json . 
+
 # Specify the command to run on container start
 ENTRYPOINT ["./gunicorn.sh"]

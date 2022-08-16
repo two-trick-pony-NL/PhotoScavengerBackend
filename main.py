@@ -8,11 +8,13 @@ from newassignmentV2 import new_assignmentV2
 from fastapistats import Stats
 import json
 from fastapi.templating import Jinja2Templates
+import os
 
 
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
-templates = Jinja2Templates(directory='templates')
+templates = Jinja2Templates(directory=os.path.abspath(os.path.expanduser('templates')))
+
 
 import uuid
 import os
@@ -30,10 +32,7 @@ def read_root(request: Request):
     length_of_data = len(data)
     values = list(data.values())
     keys = list(data.keys())
-    keylist = []
-    for key in keys:
-        keylist.append(str(key.replace('&',"")))
-    return templates.TemplateResponse('index.html' , {'request': request, 'data': data, 'keys':keys, "keylist":keylist, 'values':values, 'length':length_of_data})
+    return templates.TemplateResponse('index.html', {'request': request, 'data': data, 'keys':keys, 'values':values, 'length':length_of_data})
 
 
 @app.get('/exampleresponse')
