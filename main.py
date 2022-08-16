@@ -16,8 +16,6 @@ app = FastAPI()
 app.add_middleware(ApilyticsMiddleware, api_key="fab9786a-ec56-4743-9d57-a41a53816e86")
 
 
-
-#This is just a test enpoint, that should be removed later. But it allows me to verify the backend is running, if the image detector is down. 
 @app.get("/", response_class=HTMLResponse)
 def read_root():
     return"""
