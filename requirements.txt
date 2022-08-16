@@ -6,7 +6,7 @@ uvicorn==0.18.1
 gunicorn==20.1.0
 pandas>=1.1.4
 python-multipart
-apilytics
+apilytics==1.6.0
 
 # YOLOv5 requirements
 # Usage: pip install -r requirements.txt

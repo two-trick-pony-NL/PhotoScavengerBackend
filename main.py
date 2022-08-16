@@ -5,6 +5,9 @@ from ImageDetectorV1 import detectorV1
 from ImageDetectorV2 import detectorV2
 from newassignmentV1 import new_assignmentV1
 from newassignmentV2 import new_assignmentV2
+from fastapistats import Stats
+import json
+
 
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
@@ -14,9 +17,11 @@ import os
 
 app = FastAPI()
 app.add_middleware(ApilyticsMiddleware, api_key="fab9786a-ec56-4743-9d57-a41a53816e86")
+update = Stats.update_stats
 
 
 @app.get("/", response_class=HTMLResponse)
+@update(name="API Docs Homepage") 
 def read_root():
     return"""
     <html>
@@ -46,6 +51,7 @@ def read_root():
 
 
 @app.get("/exampleresponse")
+@update(name="Example Response") 
 def exampleresponse():
     return {"Searchedfor:":"boat","Wasfound":"NO","OtherObjectsDetected":["person","person","person","person","bicycle","motorbike","bicycle","motorbike","bicycle"],"Processed_FileName":"scanned_image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg","file_url":"image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg","listofobjectsWithConfidence":[{"person":100},{"person":100},{"person":100},{"person":100},{"bicycle":97},{"motorbike":91},{"bicycle":75},{"motorbike":48},{"bicycle":28}]}
 
@@ -54,6 +60,7 @@ def exampleresponse():
 #Add a image to your call in the body, and set a expected object in the URL. 
 #The function then runs the AI model to see if the picture contains the expected object
 @app.post("/uploadfile/{expectedobject}")
+@update(name="uploadfile V1") # if the name kwarg is not passed it will default to the function name
 async def UploadImage(expectedobject, file: bytes = File(...)):
     uniqueid = str(uuid.uuid4())
     with open('image'+uniqueid+'.jpg','wb') as image:
@@ -74,6 +81,7 @@ async def UploadImage(expectedobject, file: bytes = File(...)):
     #return templates.TemplateResponse("index.html", {"request": None, "id": id, 'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage})
 
 @app.post("/v2/uploadfile/{expectedobject}")
+@update(name="uploadfile V2") # if the name kwarg is not passed it will default to the function name
 async def UploadImage(expectedobject, file: bytes = File(...)):
     #Receiving the image the image
     uniqueid = str(uuid.uuid4())
@@ -93,14 +101,21 @@ async def UploadImage(expectedobject, file: bytes = File(...)):
 
 
 @app.get("/newassignment/{score}")
+@update(name="New Assignment V1") # if the name kwarg is not passed it will default to the function name
 def new_assignment(score: int):
     assignment = new_assignmentV1(score)
     return assignment
 
 @app.get("/v2/newassignment/{score}")
+@update(name="New Assignment V2") # if the name kwarg is not passed it will default to the function name
 def new_assignment(score: int):
     assignment = new_assignmentV2(score)
     return assignment
     
+@app.get("/stats")
+def get_stats():
+    f = open('stats.json')
+    data = json.load(f)
+    return data
 
 
