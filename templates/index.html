@@ -13,7 +13,19 @@
                 <li>3. replace boat for an object you think is in the image.</li>
                 </ul>
                 <hr>
-                <h2>Check what calls are being made</h2>
+              </div>
+                <hr>
+                <h2>How to get an example response</h2>
+                <p>Send a call to http://scangame.herokuapp.com/exampleresponse
+                <hr>
+                <h2> Where to find the documentation? </h2>
+                <p>check: https://scangamebackend.herokuapp.com/docs for documentation</p>
+                <p>Or check github : https://github.com/two-trick-pony-NL/PhotoScavengerBackend</p>
+
+                <hr>
+                <h2>Check what calls are being made {{values}} {{keys}}</h2>
+
+                
                 <table style="padding: 15px; text-align: center;border: 1px solid;">
                     <tr>
                       <th>Endpoint</th>
@@ -27,12 +39,53 @@
                     </tr>
                     {% endfor %}
                   </table>
-                <hr>
-                <h2>How to get an example response</h2>
-                <p>Send a call to http://scangame.herokuapp.com/exampleresponse
-                <hr>
-                <h2> Where to find the documentation? </h2>
-                <p>check: https://scangamebackend.herokuapp.com/docs for documentation</p>
-                <p>Or check github : https://github.com/two-trick-pony-NL/PhotoScavengerBackend</p>
+
+<br>
+<br>
+
+
+
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+    const ctx = document.getElementById('myChart');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>
+                
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         </body>
+    
     </html> 

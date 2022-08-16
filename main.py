@@ -28,9 +28,9 @@ def read_root(request: Request):
     f = open('stats.json')
     data = json.load(f)
     length_of_data = len(data)
-    print(data)
-    print(length_of_data)
-    return templates.TemplateResponse("index.html" , {"request": request, "data": data, "length":length_of_data})
+    values = data.values()
+    keys = data.keys()
+    return templates.TemplateResponse("index.html" , {"request": request, "data": data, "keys":keys, "values":values, "length":length_of_data})
 
 
 @app.get("/exampleresponse")
@@ -100,17 +100,7 @@ def get_stats():
     f = open('stats.json')
     data = json.load(f)
     return data
-
-
-@app.get("/dashboard", response_class=HTMLResponse)
-@update(name="Dashboard visit")
-def get_stats(request: Request):
-    f = open('stats.json')
-    data = json.load(f)
-    length_of_data = len(data)
-    print(data)
-    print(length_of_data)
-    return templates.TemplateResponse("dashboard.html" , {"request": request, "data": data, "length":length_of_data})
+    
 
 @app.get("/healthcheck")
 @update(name="Healtcheck by AWS")
