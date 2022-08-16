@@ -8,7 +8,7 @@ pandas>=1.1.4
 python-multipart
 apilytics==1.6.0
 Jinja2==3.1.2
-
+fast-api-stats==0.0.4
 # YOLOv5 requirements
 # Usage: pip install -r requirements.txt
 
