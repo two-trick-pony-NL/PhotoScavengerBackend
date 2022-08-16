@@ -4,7 +4,8 @@
 
 
 
-# Photoscavenger App
+
+# Photoscavenger App! 
 This is the FastAPI backend that supports my PhotoScavenger Apps. It can detect certain objects from pictures. This API serves my iOS/Android apps for the game here: https://photoscavenger.petervandoorn.com
 
 Here is a in-game screenshot: <br>
@@ -185,3 +186,10 @@ response:
 ```
 
 
+
+# Monitoring deployment
+Here is my command to keep track of deployment
+
+```
+gh run watch && watch -n 5 aws lightsail get-container-log --service-name photoscavenger --container-name photoscavenger --filter-pattern deployment
+```
