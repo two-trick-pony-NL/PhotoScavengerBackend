@@ -1,6 +1,9 @@
 {
-    "API Docs Homepage": 87,
-    "Example Response": 1,
-    "New Assignment V1": 1,
-    "New Assignment V2": 3006
+    "Homepage": 50,
+    "ExampleResponse": 1,
+    "NewAssignmentV2": 1,
+    "NewAssignmentV1": 1,
+    "uploadfileV2": 0,
+    "uploadfileV1": 0,
+    "Healtcheck by AWS": 1
 }

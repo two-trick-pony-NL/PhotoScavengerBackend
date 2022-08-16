@@ -24,6 +24,7 @@ COPY main.py .
 COPY newassignmentV1.py .
 COPY newassignmentV2.py .
 COPY assignments ./assignments
+COPY templates ./templates
 COPY models ./models
 COPY static ./static
 COPY Tests ./tests
