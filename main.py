@@ -13,7 +13,7 @@ import uuid
 import os
 
 app = FastAPI()
-app.add_middleware(ApilyticsMiddleware, api_key="fab9786a-ec56-4743-9d57-a41a53816e86"
+app.add_middleware(ApilyticsMiddleware, api_key="fab9786a-ec56-4743-9d57-a41a53816e86")
 
 
 
