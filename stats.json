@@ -1,8 +1,8 @@
 {
-    "Homepage": 1,
+    "Homepage": 15,
     "ExampleResponse": 1,
-    "NewAssignmentV2": 1,
-    "NewAssignmentV1": 1,
+    "NewAssignmentV2": 2,
+    "NewAssignmentV1": 2,
     "uploadfileV2": 1,
     "uploadfileV1": 1,
     "Healtcheck by AWS": 1

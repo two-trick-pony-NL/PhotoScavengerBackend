@@ -23,6 +23,7 @@
                 <div class="card-body">
                   <h5 class="card-title">What is Photo Scavenger?</h5>
                   <p class="card-text">Photo Scavenger is a object detection game, where you earn points by taking photos of objects around your house.</p>
+                  <a href="http://photoscavenger.petervandoorn.com" class="btn btn-secondary" role="button" >Check out the App</a>
                   <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
                 
@@ -70,7 +71,7 @@
               </h2>
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <a href="https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/exampleresponse" class="btn btn-danger" tabindex="-1" role="button">Get example response (JSON)</a>
+                    <a href="https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/exampleresponse" class="btn btn-secondary" tabindex="-1" role="button">Get example response (JSON)</a>
                     <br>Then you should receive something like: <br><br>
                     <code> {"Searchedfor:":"boat",<br>"Wasfound":"NO",<br>"OtherObjectsDetected":["person","person","person","person","bicycle","motorbike","bicycle","motorbike","bicycle"],<br>"Processed_FileName":"scanned_image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg",<br>"file_url":"image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg",<br>}</code>
                     <p>Or send a <code>GET</code> request to https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/exampleresponse
@@ -79,14 +80,87 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="headingFour">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-                    Where to find the documentation?
+                    What endpoints are available and where do I find documentation?
                   </button>
                 </h2>
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
-                    <a href="https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/docs/" class="btn btn-danger" tabindex="-1" role="button">Get API documentation (Swagger)</a>
+                    <p>Check the Swagger documentation to see what endpoints are available and what parameters they take</p>
+                    <a href="https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/docs/" class="btn btn-secondary" tabindex="-1" role="button">Get API documentation (Swagger)</a>
+                    <a href="https://github.com/two-trick-pony-NL/PhotoScavengerBackend" class="btn btn-secondary" tabindex="-1" role="button">GitHub</a>
                 <br>
-                    <p>For the source code check <a href="https://github.com/two-trick-pony-NL/PhotoScavengerBackend">GitHub</a></p>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Endpoint</th>
+                      <th scope="col">returns</th>
+                      <th scope="col">Example</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>/exampleresponse</td>
+                      <td>A JSON object of a detected object, without you uploading a image </td>
+                      <td><code> {"Searchedfor:":"boat",<br>"Wasfound":"NO",<br>"OtherObjectsDetected":["person","person","person","person","bicycle","motorbike","bicycle","motorbike","bicycle"],<br>"Processed_FileName":"scanned_image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg",<br>"file_url":"image54e46fb8-93f8-43ad-a8ec-99eb83f260af.jpg",<br>}</code></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>/newassignment/200</td>
+                      <td>A JSON object with a random name and an Emoji. The endpoint requires you to send a score for instance "200", the higher the score the more complex the assignment These can be used the V1 version of this endpoint returns 18 objects, the V2 version can do 80</td>
+                      <td><code>{"sofa":"🛋"}</code></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>/v2/newassignment/200</td>
+                      <td>A JSON object with a random name and an Emoji. The endpoint requires you to send a score for instance "200", the higher the score the more complex the assignment These can be used the V1 version of this endpoint returns 18 objects, the V2 version can do 80</td>
+                      <td><code>{"apple":"🍎"}</code></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td>/uploadfile/boat</td>
+                      <td>A JSON object with the outcome of the detection. The endpoint requires you to send a object you were expecting for instance "boat". </td>                      <td><code>{<br>
+                        "Searchedfor:": "dog",<br>
+                        "Wasfound": "NO",<br>
+                        "OtherObjectsDetected": [<br>
+                            "person",<br>
+                            "person",<br>
+                            "car",<br>
+                        ],<br>
+                        "Processed_FileName": "image928f49c1-65e3-4eac-8770-b890db598cde.jpg"
+                    }</code></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td>/v2/uploadfile/boat</td>
+                      <td>A JSON object with the outcome of the detection. The endpoint requires you to send a object you were expecting for instance "boat". </td>
+                      <td><code>{<br>
+                        "Searchedfor:": "person",<br>
+                        "Wasfound": "YES",<br>
+                        "OtherObjectsDetected": [<br>
+                            "person",<br>
+                            "person",<br>
+                            "person",<br>
+                            "person",<br>
+                            "person",<br>
+                            "boat",<br>
+                            "person",<br>
+                            "person",<br>
+                            "boat",<br>
+                            "person",<br>
+                            "person",<br>
+                            "boat",<br>
+                            "person"<br>
+                        ],<br>
+                        "Processed_FileName": "image928f49c1-65e3-4eac-8770-b890db598cde.jpg"
+                    }</code></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <br>
+                    <p>Check out Github page for the source code  <a href="https://github.com/two-trick-pony-NL/PhotoScavengerBackend">Code on GitHub</a></p>
                   </div>
                 </div>
             </div>
