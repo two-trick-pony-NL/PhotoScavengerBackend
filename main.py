@@ -1,5 +1,4 @@
 from click import option
-from apilytics.fastapi import ApilyticsMiddleware
 from fastapi import FastAPI, File, UploadFile, Request
 from ImageDetectorV1 import detectorV1
 from ImageDetectorV2 import detectorV2
@@ -20,7 +19,6 @@ import uuid
 import os
 
 app = FastAPI()
-app.add_middleware(ApilyticsMiddleware, api_key='fab9786a-ec56-4743-9d57-a41a53816e86')
 update = Stats.update_stats
 
 
