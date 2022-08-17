@@ -1,9 +1,9 @@
 {
-    "Homepage": 69,
-    "ExampleResponse": 75,
-    "NewAssignmentV2": 98,
-    "NewAssignmentV1": 33,
-    "uploadfileV2": 26,
-    "uploadfileV1": 56,
-    "Healtcheck by AWS": 18
+    "Homepage": 1,
+    "ExampleResponse": 1,
+    "NewAssignmentV2": ,
+    "NewAssignmentV1": 1,
+    "uploadfileV2": 1,
+    "uploadfileV1": 1,
+    "Healtcheck by AWS": 0
 }
