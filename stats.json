@@ -1,9 +1,10 @@
 {
-    "Homepage": 18,
-    "ExampleResponse": 1,
-    "NewAssignmentV2": 2,
-    "NewAssignmentV1": 2,
-    "uploadfileV2": 1,
-    "uploadfileV1": 1,
-    "Healtcheck by AWS": 1
+    "Homepage": 0,
+    "ExampleResponse": 0,
+    "NewAssignmentV2": 0,
+    "NewAssignmentV1": 0,
+    "uploadfileV2": 0,
+    "uploadfileV1": 0,
+    "Healtcheck by AWS": 0,
+    "timestamp": 0
 }

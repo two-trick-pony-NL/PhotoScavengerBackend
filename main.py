@@ -8,6 +8,11 @@ from fastapistats import Stats
 import json
 from fastapi.templating import Jinja2Templates
 import os
+from datetime import datetime
+from fastapi_utils.tasks import repeat_every
+import asyncio
+
+
 
 
 from fastapi.staticfiles import StaticFiles
@@ -99,3 +104,36 @@ def new_assignment(score: int):
 @update(name='Healtcheck by AWS')
 def healthcheck():
     return 'Server is up'
+
+@app.get('/get_long_term_data/')
+def get_long_term_data():
+    with open ('statslongterm.json', 'r+') as payload:
+        payload = json.load(payload)
+        return payload
+     
+
+@repeat_every(seconds=60 * 60) 
+async def daily_analytics_update():
+    # Get the current days stats and add a timestamp
+    with open ('stats.json', 'r+') as data:
+        new_data = json.load(data)
+        date = {'timestamp':datetime.today().strftime('%Y-%m-%d %H:%M')}
+        new_data.update(date)
+
+    with open('statslongterm.json','r+') as file:
+          # First we load existing data into a dict.
+        file_data = json.load(file)
+        # Join new_data with file_data inside emp_details
+        file_data["LongtermData"].append(new_data)
+        # Sets file's current position at offset.
+        file.seek(0)
+        # convert back to json.
+        json.dump(file_data, file, indent = 4)
+ 
+    # reset the daily json to 0 
+    for i in new_data:
+        new_data[i] = 0
+    with open("stats.json", "w") as f:
+        json.dump(new_data, f, indent=4)
+
+#asyncio.run(daily_analytics_update())
