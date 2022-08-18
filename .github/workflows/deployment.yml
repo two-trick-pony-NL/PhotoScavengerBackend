@@ -36,6 +36,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: 🤖 Downloading Machine Learning Model (Yolov5X)
         run: wget https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5m.pt
+      - name: 📊 Downloading the usage stats from the current server to the new server for continuity
+        run: curl -X GET "https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/get_long_term_data" > statslongterm.json
         
       - name: 🐳 Create a Docker Container
         run: docker build -t photoscavenger:latest .
