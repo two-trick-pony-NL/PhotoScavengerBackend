@@ -9,6 +9,7 @@ python-multipart
 Jinja2==3.1.2
 fastapi-utils==0.2.1
 fast-api-stats==0.0.4
+apscheduler==3.9.1
 # YOLOv5 requirements
 # Usage: pip install -r requirements.txt
 

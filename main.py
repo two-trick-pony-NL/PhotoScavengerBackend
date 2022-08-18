@@ -9,10 +9,7 @@ import json
 from fastapi.templating import Jinja2Templates
 import os
 from datetime import datetime
-from fastapi_utils.tasks import repeat_every
-import asyncio
-
-
+from apscheduler.schedulers.background import BackgroundScheduler
 
 
 from fastapi.staticfiles import StaticFiles
@@ -112,8 +109,8 @@ def get_long_term_data():
         return payload
      
 
-@repeat_every(seconds=60 * 60) 
-async def daily_analytics_update():
+
+def daily_analytics_update():
     # Get the current days stats and add a timestamp
     with open ('stats.json', 'r+') as data:
         new_data = json.load(data)
@@ -136,4 +133,7 @@ async def daily_analytics_update():
     with open("stats.json", "w") as f:
         json.dump(new_data, f, indent=4)
 
-#asyncio.run(daily_analytics_update())
+#This schedular runs every hour making a snapshot of the stats.json file and stores in in the longermdata file
+scheduler = BackgroundScheduler()
+scheduler.add_job(daily_analytics_update, 'interval', hours=1)
+scheduler.start()
