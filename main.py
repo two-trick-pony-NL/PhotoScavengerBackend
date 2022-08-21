@@ -136,3 +136,26 @@ def daily_analytics_update():
 scheduler = BackgroundScheduler()
 scheduler.add_job(daily_analytics_update, 'interval', hours=1)
 scheduler.start()
+
+#Creating the longtermstatsfile
+dictionary = {
+    "LongtermData": [
+        {
+            "Homepage": 0,
+            "ExampleResponse": 0,
+            "NewAssignmentV2": 0,
+            "NewAssignmentV1": 0,
+            "uploadfileV2": 0,
+            "uploadfileV1": 0,
+            "Healtcheck by AWS": 0,
+            "timestamp": "2022-08-18 18:47"
+        }
+    ]
+}
+ 
+# Serializing json
+json_object = json.dumps(dictionary, indent=4)
+ 
+# Writing to sample.json
+with open("statslongterm.json", "w") as outfile:
+    outfile.write(json_object)
