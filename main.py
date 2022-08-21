@@ -1,5 +1,4 @@
-from click import option
-from fastapi import FastAPI, File, UploadFile, Request
+from fastapi import FastAPI, File, Request
 from ImageDetectorV1 import detectorV1
 from ImageDetectorV2 import detectorV2
 from newassignmentV1 import new_assignmentV1
@@ -98,7 +97,7 @@ def new_assignment(score: int):
     return assignment
     
 @app.get('/healthcheck')
-@update(name='Healtcheck by AWS')
+@update(name='Healthcheck by AWS')
 def healthcheck():
     return 'Server is up'
 
