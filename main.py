@@ -134,7 +134,7 @@ def daily_analytics_update():
 
 #This schedule runs every hour making a snapshot of the stats.json file and stores in in the longermdata file
 scheduler = BackgroundScheduler()
-scheduler.add_job(daily_analytics_update, 'interval', hours=1)
+scheduler.add_job(daily_analytics_update, 'interval', days=1)
 scheduler.start()
 
 #Creating the longtermstatsfile
