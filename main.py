@@ -132,7 +132,7 @@ def daily_analytics_update():
     with open("stats.json", "w") as f:
         json.dump(new_data, f, indent=4)
 
-#This schedule runs every hour making a snapshot of the stats.json file and stores in in the longermdata file
+#This schedule runs every hour making a snapshot of the stats.json file and stores in in the longermdata filedd
 scheduler = BackgroundScheduler()
 scheduler.add_job(daily_analytics_update, 'interval', days=1)
 scheduler.start()
