@@ -9,6 +9,26 @@
             "uploadfileV1": 0,
             "Healtcheck by AWS": 0,
             "timestamp": "2022-08-18 18:47"
+        },
+        {
+            "Homepage": 5,
+            "ExampleResponse": 0,
+            "NewAssignmentV2": 0,
+            "NewAssignmentV1": 0,
+            "uploadfileV2": 4,
+            "uploadfileV1": 0,
+            "Healthcheck by AWS": 0,
+            "timestamp": "2022-08-21 19:12"
+        },
+        {
+            "Homepage": 0,
+            "ExampleResponse": 0,
+            "NewAssignmentV2": 0,
+            "NewAssignmentV1": 0,
+            "uploadfileV2": 0,
+            "uploadfileV1": 0,
+            "Healthcheck by AWS": 0,
+            "timestamp": "2022-08-21 19:12"
         }
     ]
 }
