@@ -134,8 +134,11 @@ def daily_analytics_update():
 
 #This schedule runs every hour making a snapshot of the stats.json file and stores in in the longermdata filedd
 scheduler = BackgroundScheduler()
-scheduler.add_job(daily_analytics_update, 'interval', days=1)
+scheduler.add_job(daily_analytics_update, 'interval', hours=1)
 scheduler.start()
+
+
+now = datetime.today().strftime('%Y-%m-%d %H:%M')
 
 #Creating the longtermstatsfile
 dictionary = {
@@ -148,7 +151,7 @@ dictionary = {
             "uploadfileV2": 0,
             "uploadfileV1": 0,
             "Healtcheck by AWS": 0,
-            "timestamp": "2022-08-18 18:47"
+            "timestamp": now
         }
     ]
 }
