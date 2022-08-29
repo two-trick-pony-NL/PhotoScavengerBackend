@@ -23,6 +23,7 @@ update = Stats.update_stats
 @app.get('/', response_class=RedirectResponse)
 @update(name='Homepage') 
 def read_root(request: Request):
+    print("redirect to dashboard")
     return RedirectResponse("https://two-trick-pony-nl-dashboard-photoscavenger-dashboard-jvqrac.streamlitapp.com/")
 
 
