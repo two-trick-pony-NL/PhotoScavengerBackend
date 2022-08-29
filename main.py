@@ -115,7 +115,7 @@ def new_assignment_v2(score: int):
   
 
 @app.get('/healthcheck')
-@update(name='Healtcheck by AWS')
+@update(name='Healthcheck by AWS')
 def healthcheck():
     return 'Server is up'
 
