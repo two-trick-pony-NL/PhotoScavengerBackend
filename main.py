@@ -9,7 +9,7 @@ from fastapi.templating import Jinja2Templates
 import os
 from datetime import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
 import uuid
 
 
@@ -20,21 +20,11 @@ app = FastAPI()
 update = Stats.update_stats
 
 
-@app.get('/', response_class=HTMLResponse)
+@app.get('/', response_class=RedirectResponse)
 @update(name='Homepage') 
 def read_root(request: Request):
-    f = open('stats.json')
-    data = json.load(f)
-    length_of_data = len(data)
-    values = list(data.values())
-    keys = list(data.keys())
-    return templates.TemplateResponse(
-        'index.html', 
-        {'request': request, 
-            'data': data, 
-            'keys': keys, 
-            'values': values, 
-            'length': length_of_data})
+    return RedirectResponse("https://two-trick-pony-nl-dashboard-photoscavenger-dashboard-jvqrac.streamlitapp.com/")
+
 
 
 @app.get('/exampleresponse')
@@ -166,3 +156,4 @@ def daily_analytics_update():
 scheduler = BackgroundScheduler()
 scheduler.add_job(daily_analytics_update, 'interval', hours=1)
 scheduler.start()
+
