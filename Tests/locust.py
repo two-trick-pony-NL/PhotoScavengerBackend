@@ -20,8 +20,8 @@ class MobileApp(HttpUser):
 
     @task(2)
     def V2_image_upload(self):
-        #url = 'https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/v2/uploadfile/person'
-        url = 'localhost/v2/uploadfile/person'
+        url = 'https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/v2/uploadfile/person'
+        #url = 'localhost/v2/uploadfile/person'
         with open('Testimages/family.png', 'rb') as image:
             payload={}
             files=[('file',image)]
@@ -31,8 +31,8 @@ class MobileApp(HttpUser):
 
     @task(2)
     def V1_image_upload(self):
-        #url = 'https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/uploadfile/person'
-        url = 'localhost/uploadfile/person'
+        url = 'https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/uploadfile/person'
+        #url = 'localhost/uploadfile/person'
         with open('Testimages/family.png', 'rb') as image:
             payload={}
             files=[('file',image)]

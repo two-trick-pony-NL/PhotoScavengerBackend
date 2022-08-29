@@ -123,7 +123,7 @@ def healthcheck():
 
 @app.get('/get_long_term_data/')
 def get_long_term_data():
-    with open('statslongterm.json', 'r+') as payload:
+    with open('/statslongterm.json', 'r+') as payload:
         payload = json.load(payload)
         return payload
     
