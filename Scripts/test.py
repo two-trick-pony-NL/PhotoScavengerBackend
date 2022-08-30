@@ -11,7 +11,7 @@ By running a great number of permutations we have assurance that the API works
 
 
 #URL = "http://localhost:8000/v2/newassignment/"
-URL = "https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/newassignment/"
+URL = "https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/v2/newassignment/"
 
 numberoftries = 3000
 
