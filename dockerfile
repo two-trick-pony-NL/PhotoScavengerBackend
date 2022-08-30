@@ -23,12 +23,13 @@ COPY ImageDetectorV2.py .
 COPY main.py .
 COPY newassignmentV1.py .
 COPY newassignmentV2.py .
+COPY stats.json .
+COPY statshistoric.json .
 COPY assignments ./assignments
 COPY templates ./templates
 COPY models ./models
 COPY static ./static
 COPY Tests ./tests
-COPY stats.json . 
 
 # Specify the command to run on container start
 ENTRYPOINT ["./gunicorn.sh"]
