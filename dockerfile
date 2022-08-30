@@ -29,7 +29,6 @@ COPY assignments ./assignments
 COPY templates ./templates
 COPY models ./models
 COPY static ./static
-COPY Tests ./tests
 
 # Specify the command to run on container start
 ENTRYPOINT ["./gunicorn.sh"]
