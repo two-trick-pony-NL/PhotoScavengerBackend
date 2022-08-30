@@ -123,19 +123,19 @@ def healthcheck():
 
 @app.get('/get_long_term_data/')
 def get_long_term_data():
-    with open('/statslongterm.json', 'r+') as payload:
+    with open('statslongterm.json', 'r+') as payload:
         payload = json.load(payload)
         return payload
     
 
 def daily_analytics_update():
     # Get the current days stats and add a timestamp
-    with open('/stats.json', 'r+') as data:
+    with open('stats.json', 'r+') as data:
         new_data = json.load(data)
         date = {'timestamp': datetime.today().strftime('%Y-%m-%d %H:%M')}
         new_data.update(date)
 
-    with open('/statslongterm.json', 'r+') as file:
+    with open('statslongterm.json', 'r+') as file:
         # First we load existing data into a dict.
         file_data = json.load(file)
         # Join new_data with file_data inside emp_details
@@ -158,3 +158,4 @@ scheduler = BackgroundScheduler()
 scheduler.add_job(daily_analytics_update, 'interval', minutes=15)
 scheduler.start()
 
+daily_analytics_update()

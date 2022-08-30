@@ -1,14 +1,44 @@
 {
     "LongtermData": [
         {
-            "Homepage": 0,
-            "ExampleResponse": 0,
-            "NewAssignmentV2": 0,
-            "NewAssignmentV1": 0,
-            "uploadfileV2": 0,
-            "uploadfileV1": 0,
-            "Healtcheck by AWS": 0,
-            "timestamp": "2022-08-18 18:47"
+            "Homepage": 74,
+            "ExampleResponse": 23,
+            "NewAssignmentV2": 40,
+            "NewAssignmentV1": 55,
+            "uploadfileV2": 200,
+            "uploadfileV1": 40,
+            "Healthcheck by AWS": 700,
+            "timestamp": "2022-08-26 08:47"
+        },
+        {
+            "Homepage": 300,
+            "ExampleResponse": 50,
+            "NewAssignmentV2": 125,
+            "NewAssignmentV1": 354,
+            "uploadfileV2": 430,
+            "uploadfileV1": 344,
+            "Healthcheck by AWS": 700,
+            "timestamp": "2022-08-27 08:47"
+        },
+        {
+            "Homepage": 78,
+            "ExampleResponse": 66,
+            "NewAssignmentV2": 900,
+            "NewAssignmentV1": 404,
+            "uploadfileV2": 598,
+            "uploadfileV1": 22,
+            "Healthcheck by AWS": 700,
+            "timestamp": "2022-08-28 08:47"
+        },
+        {
+            "Homepage": 50,
+            "ExampleResponse": 2,
+            "NewAssignmentV2": 12,
+            "NewAssignmentV1": 55,
+            "uploadfileV2": 98,
+            "uploadfileV1": 44,
+            "Healthcheck by AWS": 700,
+            "timestamp": "2022-08-29 08:47"
         }
     ]
 }
