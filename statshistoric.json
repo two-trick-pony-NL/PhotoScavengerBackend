@@ -20,9 +20,9 @@
             "uploadfileV2": 3,
             "uploadfileV1": 1,
             "Healthcheck by AWS": 3,
-            "timestamp": "2022-08-31 21:04"
+            "timestamp": "2022-08-31 21:04",
             "Detected": 2,
-            "NotDetected": 1,
+            "NotDetected": 1
         }
     ]
 }
