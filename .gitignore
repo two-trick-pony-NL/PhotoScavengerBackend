@@ -3,7 +3,5 @@
 # JPEG
 *.jpg
 *.jpeg
-*.pt
 yolov5x.pt
-yolov5n.pt
 yolov5m.pt
