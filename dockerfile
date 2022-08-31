@@ -18,7 +18,7 @@ COPY calculateassignment.py .
 COPY gunicorn.sh .
 COPY ImageDetector.py .
 COPY ImageDetectorV1.py .
-COPY yolov5m.pt .
+COPY yolov5n.pt .
 COPY ImageDetectorV2.py .
 COPY main.py .
 COPY newassignmentV1.py .
@@ -29,7 +29,7 @@ COPY assignments ./assignments
 COPY templates ./templates
 COPY models ./models
 COPY static ./static
-COPY Tests ./Scripts
+COPY Scripts ./Scripts
 
 # Specify the command to run on container start
 ENTRYPOINT ["./gunicorn.sh"]
