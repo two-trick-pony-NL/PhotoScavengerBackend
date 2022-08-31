@@ -19,26 +19,6 @@
             "uploadfileV1": 4,
             "Healthcheck by AWS": 3,
             "timestamp": "2022-08-30 11:20"
-        },
-        {
-            "Homepage": 1,
-            "ExampleResponse": 0,
-            "NewAssignmentV2": 0,
-            "NewAssignmentV1": 0,
-            "uploadfileV2": 0,
-            "uploadfileV1": 0,
-            "Healthcheck by AWS": 0,
-            "timestamp": "2022-08-31 11:53"
-        },
-        {
-            "Homepage": 0,
-            "ExampleResponse": 0,
-            "NewAssignmentV2": 0,
-            "NewAssignmentV1": 0,
-            "uploadfileV2": 0,
-            "uploadfileV1": 0,
-            "Healthcheck by AWS": 0,
-            "timestamp": "2022-08-31 11:56"
         }
-    ]
+]
 }
