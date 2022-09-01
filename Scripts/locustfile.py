@@ -27,6 +27,16 @@ class MobileApp(HttpUser):
             files=[('file',image)]
             headers = {}
             response =  self.client.request("POST", url, headers=headers, data=payload, files=files)
+
+    @task(1)
+    def V2_image_uploadIncorrect(self):
+        url = 'https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/v2/uploadfile/horse'
+        #url = 'localhost/v2/uploadfile/person'
+        with open('Testimages/family.png', 'rb') as image:
+            payload={}
+            files=[('file',image)]
+            headers = {}
+            response =  self.client.request("POST", url, headers=headers, data=payload, files=files)
             
 
     @task(2)
