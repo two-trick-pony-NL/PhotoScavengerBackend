@@ -22,6 +22,6 @@ COPY statshistoric.json .
 COPY assignments ./assignments
 COPY models ./models
 COPY static ./static
-COPY Scripts ./functions
+COPY functions ./functions
 # Specify the command to run on container start
 ENTRYPOINT ["./gunicorn.sh"]
