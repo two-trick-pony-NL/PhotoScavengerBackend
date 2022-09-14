@@ -20,7 +20,6 @@ COPY main.py .
 COPY stats.json .
 COPY statshistoric.json .
 COPY assignments ./assignments
-COPY templates ./templates
 COPY models ./models
 COPY static ./static
 COPY Scripts ./functions
