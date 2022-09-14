@@ -14,22 +14,15 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copy the content of the local src directory to the working directory
-COPY calculateassignment.py .
 COPY gunicorn.sh .
-COPY ImageDetector.py .
-COPY ImageDetectorV1.py .
 COPY yolov5n.pt .
-COPY ImageDetectorV2.py .
 COPY main.py .
-COPY newassignmentV1.py .
-COPY newassignmentV2.py .
 COPY stats.json .
 COPY statshistoric.json .
 COPY assignments ./assignments
 COPY templates ./templates
 COPY models ./models
 COPY static ./static
-COPY Scripts ./Scripts
-
+COPY Scripts ./functions
 # Specify the command to run on container start
 ENTRYPOINT ["./gunicorn.sh"]
