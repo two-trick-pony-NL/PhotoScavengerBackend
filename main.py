@@ -13,8 +13,23 @@ from fastapi.responses import RedirectResponse
 import uuid
 
 
+templates = Jinja2Templates(
+    directory=os.path.abspath(os.path.expanduser('templates')))
+
 app = FastAPI()
 update = Stats.update_stats
+
+
+# THese 2 functions help count if objects were detected for the dashboard
+@app.get('/countobjectdetected', response_class=RedirectResponse)
+@update(name='Detected') 
+def objectdetected():
+    return RedirectResponse("https://two-trick-pony-nl-dashboard-photoscavenger-dashboard-jvqrac.streamlitapp.com/")
+@app.get('/countobjectnotdetected', response_class=RedirectResponse)
+@update(name='NotDetected') 
+def objectnotdetected():
+    return RedirectResponse("https://two-trick-pony-nl-dashboard-photoscavenger-dashboard-jvqrac.streamlitapp.com/")
+
 
 
 @app.get('/', response_class=RedirectResponse)
@@ -90,6 +105,11 @@ async def UploadImageV2(expectedobject, file: bytes = File(...)):
         results = detectorV2(rawimage, expectedobject)
         # Parsing the different results
         objectfound = results[1]
+        print(objectfound)
+        if objectfound == 'NO':
+            await objectnotdetected()
+        else: 
+            await objectdetected()
         filename = results[0]
         otherobjectsdetected = results[2]
         # Removing the image uploaded so we don't store any data
@@ -151,7 +171,7 @@ def daily_analytics_update():
 # This schedular runs every hour making a snapshot of the stats.json 
 # file and stores in in the longermdata file
 scheduler = BackgroundScheduler()
-scheduler.add_job(daily_analytics_update, 'interval', hours=24)
+scheduler.add_job(daily_analytics_update, 'interval', hours=48)
 scheduler.start()
 
 daily_analytics_update()

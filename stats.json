@@ -6,5 +6,7 @@
     "uploadfileV2": 0,
     "uploadfileV1": 0,
     "Healthcheck by AWS": 0,
-    "timestamp": 0
+    "timestamp": 0,
+    "Detected": 0,
+    "NotDetected": 0
 }
