@@ -1,24 +1,4 @@
 {
     "LongtermData": [
-        {
-            "Homepage": 3,
-            "ExampleResponse": 4,
-            "NewAssignmentV2": 5,
-            "NewAssignmentV1": 4,
-            "uploadfileV2": 3,
-            "uploadfileV1": 2,
-            "Healthcheck by AWS": 1,
-            "timestamp": "2022-08-30 06:20"
-        },
-        {
-            "Homepage": 1,
-            "ExampleResponse": 2,
-            "NewAssignmentV2": 3,
-            "NewAssignmentV1": 4,
-            "uploadfileV2": 5,
-            "uploadfileV1": 4,
-            "Healthcheck by AWS": 3,
-            "timestamp": "2022-08-30 11:20"
-        }
-]
+    ]
 }

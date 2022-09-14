@@ -1,20 +1,17 @@
 from fastapi import FastAPI, File, Request
-from ImageDetectorV1 import detectorV1
-from ImageDetectorV2 import detectorV2
-from newassignmentV1 import new_assignmentV1
-from newassignmentV2 import new_assignmentV2
+from functions.ImageDetectorV1 import detectorV1
+from functions.ImageDetectorV2 import detectorV2
+from functions.newassignmentV1 import new_assignmentV1
+from functions.newassignmentV2 import new_assignmentV2
 from fastapistats import Stats
 import json
-from fastapi.templating import Jinja2Templates
+
 import os
 from datetime import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import RedirectResponse
 import uuid
 
-
-templates = Jinja2Templates(
-    directory=os.path.abspath(os.path.expanduser('templates')))
 
 app = FastAPI()
 update = Stats.update_stats
@@ -78,7 +75,6 @@ async def UploadImage(expectedobject, file: bytes = File(...)):
         os.remove(rawimage)
 
     return {'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage, 'listofobjectsWithConfidence': listofobjectsWithConfidence}
-    #  return templates.TemplateResponse('index.html', {'request': None, 'id': id, 'Searchedfor:': expectedobject, 'Wasfound': objectfound, 'OtherObjectsDetected': otherobjectsdetected, 'Processed_FileName': filename, 'file_url': rawimage})
 
 
 @app.post("/v2/uploadfile/{expectedobject}")

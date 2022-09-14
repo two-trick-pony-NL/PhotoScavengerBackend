@@ -1,5 +1,5 @@
 from random import random, choice, randint
-from calculateassignment import readassignment
+from functions.calculateassignment import readassignment
 
 
 
