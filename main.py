@@ -13,9 +13,6 @@ from fastapi.responses import RedirectResponse
 import uuid
 
 
-templates = Jinja2Templates(
-    directory=os.path.abspath(os.path.expanduser('templates')))
-
 app = FastAPI()
 update = Stats.update_stats
 
