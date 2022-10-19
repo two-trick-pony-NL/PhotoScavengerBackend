@@ -6,6 +6,9 @@
 
 
 # Photoscavenger API
+```
+Already more than 100 downloads in less than 5 weeks!
+```
 This is the FastAPI backend that supports my PhotoScavenger Apps. It can detect certain objects from pictures. This API serves my iOS/Android apps for the game here: https://photoscavenger.petervandoorn.com
 API dashboard is here: https://photoscavenger.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/
 
