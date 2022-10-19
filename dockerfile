@@ -1,5 +1,5 @@
 # Set base image (host OS)
-FROM python:3.10-buster
+FROM python:3.11.0rc2-slim
 
 # By default, listen on port 5000
 EXPOSE 80/tcp
