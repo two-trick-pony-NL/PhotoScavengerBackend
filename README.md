@@ -5,7 +5,7 @@
 
 
 
-# Photoscavenger API
+# Photoscavenger API!
 ```
 Already more than 100 downloads in less than 5 weeks!
 ```
