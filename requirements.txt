@@ -16,7 +16,7 @@ apscheduler==3.9.1
 # Base ----------------------------------e3------
 matplotlib>=3.2.2
 numpy>=1.18.5
-Pillow>=7.1.2
+Pillow>=10.0.1
 PyYAML>=5.3.1
 requests>=2.23.0
 scipy>=1.4.1
