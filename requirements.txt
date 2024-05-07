@@ -6,7 +6,7 @@ uvicorn==0.18.1
 gunicorn==20.1.0
 pandas>=1.1.4
 python-multipart
-Jinja2==3.1.2
+Jinja2==3.1.4
 fastapi-utils==0.2.1
 fast-api-stats==0.0.4
 apscheduler==3.9.1
