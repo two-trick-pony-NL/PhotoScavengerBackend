@@ -3,7 +3,7 @@ fastapi==0.78.0
 #Special version of CV2 that runs headless like my app
 opencv-python-headless
 uvicorn==0.18.1
-gunicorn==20.1.0
+gunicorn==21.2.0
 pandas>=1.1.4
 python-multipart
 Jinja2==3.1.2
