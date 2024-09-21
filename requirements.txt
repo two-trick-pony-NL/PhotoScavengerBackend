@@ -1,12 +1,12 @@
 alembic==1.7.7
-fastapi==0.78.0
+fastapi==0.109.1
 #Special version of CV2 that runs headless like my app
 opencv-python-headless
 uvicorn==0.18.1
-gunicorn==20.1.0
+gunicorn==22.0.0
 pandas>=1.1.4
 python-multipart
-Jinja2==3.1.2
+Jinja2==3.1.4
 fastapi-utils==0.2.1
 fast-api-stats==0.0.4
 apscheduler==3.9.1
@@ -15,12 +15,12 @@ apscheduler==3.9.1
 
 # Base ----------------------------------e3------
 matplotlib>=3.2.2
-numpy>=1.18.5
-Pillow>=10.2.0
+numpy>=1.22.2
+Pillow>=10.3.0
 PyYAML>=5.3.1
-requests>=2.23.0
+requests>=2.32.2
 scipy>=1.4.1
-torch>=1.7.0
+torch>=2.2.0
 torchvision>=0.8.1
 tqdm>=4.64.0
 protobuf<=3.20.2  # https://github.com/ultralytics/yolov5/issues/8012
@@ -53,5 +53,10 @@ thop>=0.1.1  # FLOPs computation
 # pycocotools>=2.0  # COCO mAP
 # roboflow
 wheel>=0.38.0 # not directly required, pinned by Snyk to avoid a vulnerability
-setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
+setuptools>=70.0.0 # not directly required, pinned by Snyk to avoid a vulnerability
 starlette>=0.25.0 # not directly required, pinned by Snyk to avoid a vulnerability
+anyio>=4.4.0 # not directly required, pinned by Snyk to avoid a vulnerability
+fonttools>=4.43.0 # not directly required, pinned by Snyk to avoid a vulnerability
+urllib3>=2.2.2 # not directly required, pinned by Snyk to avoid a vulnerability
+werkzeug>=3.0.3 # not directly required, pinned by Snyk to avoid a vulnerability
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
